@@ -1,6 +1,7 @@
 {% if site.duoshuo_shortname %}
 <section id="comments" class="comment">
 	<div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ site.url }}{{ site.baseurl }}{{ page.url }}"></div>
+	<!-- 多说公共JS代码 start -->
 	<script type="text/javascript">
 		var duoshuoQuery = {short_name:"bnuephjx"};
 		(function() {
@@ -12,8 +13,7 @@
 			 || document.getElementsByTagName('body')[0]).appendChild(ds);
 		})();
 	</script>
-<!-- 多说公共JS代码 end -->
-{% endif %}
+	<!-- 多说公共JS代码 end -->
 </section>
 {% endif %}
 {% if site.disqus_shortname or site.disqus_shortname %}
