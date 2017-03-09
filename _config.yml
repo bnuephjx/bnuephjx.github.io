@@ -1,7 +1,7 @@
-#### Exclude
+#### Exclude 不包括
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
-#### Code Highlighter
+#### Code Highlighter 高亮代码
 highlighter: rouge
 
 #### Permalink
@@ -13,7 +13,7 @@ markdown: kramdown
 kramdown:
     input: GFM
 
-#### Default Attributes
+#### Default Attributes 默认属性
 defaults:
   -
     scope:
@@ -22,23 +22,23 @@ defaults:
     values:
       layout: "post"
 
-#### Pagination
+#### Pagination 分页数量
 paginate: 5
 
-#### Site
-title : Jekyll Jacman
-tagline: A fresh looking and responsive theme for Jekyll
+#### Site 头部信息设置，assets是静态资源路径，例如css
+title : '个人博客'
+tagline: '欢迎'
 assets: /assets
-baseurl: 
+baseurl:
 
-#### Language
+#### Language 语言
 language: zh-CN    ## blog site languages: en, zh-CN, zh-TW
 
-#### Menu
+#### Menu 菜单
 menu:
   '主页': /
-  Archives: /archives
-  About: /about
+  '归档': /archives
+  '关于我': /about
 ## you can create `tags` and `categories` folders (I had created them already).
 ## And create a `index.md` file in each of them.
 ## set `front-matter`as
@@ -46,8 +46,8 @@ menu:
 ## title: tags (or categories)
 ## ---
 
-#### Widgets
-widgets: 
+#### Widgets 控件
+widgets:
 - category
 - tag
 - tagcloud
@@ -58,30 +58,30 @@ widgets:
 ## provide seven widgets:github-card,category,tag,rss,archive,tagcloud,links,weibo,douban
 
 
-#### RSS 
+#### RSS
 rss: /atom.xml ## RSS address.
 
-#### Image
+#### Image 图片
 imglogo:
-  enable: true             ## display image logo true/false.
-  src: img/logo.png        ## `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
-favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
-apple_icon: img/jacman.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
-author_img: img/author.jpg ## size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
-banner_img: #img/banner.jpg ## size:1920px*200px+. Banner Picture
+  enable: true             ## 是否显示网站 logo   display image logo true/false.  
+  src: img/logo.png        ## 选择图片   `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
+favicon: img/favicon.ico   ## 网址图标   size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
+apple_icon: img/jacman.jpg ## 苹果设备上的图标  size:114px*114px,please put image into the theme folder `/jacman/source/img`.
+author_img: img/author.jpg ## 作者图片   size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
+banner_img: #img/banner.jpg ## banner图片  size:1920px*200px+. Banner Picture
 
-#### index post is expanding or not 
+#### index post is expanding or not 首页设置
 index:
-  expand: true           ## default is unexpanding,so you can only see the short description of each post.
-  excerpt_link: Read More  
+  expand: true           ## 是否开启阅读全文 default is unexpanding,so you can only see the short description of each post.
+  excerpt_link: '阅读全文' ## 自定义名字
 
-close_aside: false  #close sidebar in post page if true
+close_aside: false  ##是否在文章页面自动关闭侧边栏 close sidebar in post page if true 
 mathjax: true      #enable mathjax if true
-share_button: true #enable share buttons if true
+share_button: true #是否设置分享按钮 enable share buttons if true
 
-#### Author information
+#### Author information 作者个人信息
 author:
-  name: yitao      ## e.g. wuchong Author name
+  name: 'Evan'      ## e.g. wuchong Author name
   intro_line1:  "Hello ,I'm Larry Page in Google."    ## your introduction on the bottom of the page
   intro_line2:  "This is my blog,believe it or not."  ## the 2nd line
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
@@ -98,29 +98,29 @@ author:
   stackoverflow:  ## e.g. 3222790 for http://stackoverflow.com/users/3222790/jark
 ## if you set them, the corresponding  share button will show on the footer
 
-#### Toc
+#### Toc 目录
 toc:
-  article: true   ## show contents in article.
-  aside: true     ## show contents in aside.
+  article: true   ## 是否在文章中显示目录 show contents in article.
+  aside: true     ## 是否在侧边栏显示目录 show contents in aside.
 ## you can set both of the value to true of neither of them.
 ## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
 
-#### Links
+#### Links 友情链接
 links:
   码农圈: https://coderq.com
   Jark's Blog: http://wuchong.me
 
-#### Comment
+#### Comment 评论
 duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
 disqus_shortname:     ## e.g. wuchong   your disqus short name.
 
-#### Share button
+#### Share button 分享按钮
 jiathis:
-  enable: false ## if you use jiathis as your share tool,the built-in share tool won't be display.
+  enable: false ## 默认使用主题内建分享 if you use jiathis as your share tool,the built-in share tool won't be display.
   id:    ## e.g. 1889330 your jiathis ID. 
   tsina: ## e.g. 2176287895 Your weibo id,It will be used in share button.
 
-#### Analytics
+#### Analytics 网站统计
 google_analytics:
   enable: false
   id:        ## e.g. UA-46321946-2 your google analytics ID.
@@ -136,10 +136,10 @@ cnzz_tongji:
 
 #### Miscellaneous
 fancybox: true        ## if you use gallery post or want use fancybox please set the value to true.
-totop: true           ## if you want to scroll to top in every post set the value to true
+totop: true           ## 回到顶部 if you want to scroll to top in every post set the value to true
 
-#### Custom Search
-google_cse: 
+#### Custom Search 自定义搜索
+google_cse:
   enable: false
   cx: 018294693190868310296:abnhpuysycw  ## e.g. 018294693190868310296:abnhpuysycw your Custom Search ID.
 ## https://www.google.com/cse/ 
