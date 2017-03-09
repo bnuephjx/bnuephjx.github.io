@@ -36,7 +36,7 @@ language: zh-CN    ## blog site languages: en, zh-CN, zh-TW
 
 #### Menu
 menu:
-  Home: /
+  '主页': /
   Archives: /archives
   About: /about
 ## you can create `tags` and `categories` folders (I had created them already).
