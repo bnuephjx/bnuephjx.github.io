@@ -111,7 +111,7 @@ links:
   Jark's Blog: http://wuchong.me
 
 #### Comment 评论
-duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
+duoshuo_shortname: true    ## e.g. wuchong   your duoshuo short name.
 disqus_shortname:     ## e.g. wuchong   your disqus short name.
 
 #### Share button 分享按钮
