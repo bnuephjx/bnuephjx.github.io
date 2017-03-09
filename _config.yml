@@ -21,9 +21,9 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      
+
 #### Pagination
-paginate: 20
+paginate: 5
 
 #### Site
 title : Jekyll Jacman
