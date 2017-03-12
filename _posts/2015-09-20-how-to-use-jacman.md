@@ -15,8 +15,18 @@ Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具�
 <!-- more -->
 
 ## 配置指南
-
+{% highlight ruby %} def show @widget = Widget(params[:id]) respond_to do |format| format.html # show.html.erb format.json { render json: @widget } end end {% endhighlight %}
 Jacman 主题提供了丰富的配置属性，可以实现您对主题的自定义。配置文件`_config.yml`位于主题根目录下。本次更新对配置文件进行了较大调整，如您之前就使用了 Jacman，也需要您根据以下指南进行相应的修改。
+
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
 
 ```
 ##### 菜单
