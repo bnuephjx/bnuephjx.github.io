@@ -1,0 +1,11 @@
+<li>
+    <article>
+        <h3><a href='{{ item.link }}' title="{{ item.title }}">{{ item.title }}</a></h3>
+        <h6 class="time">{{ item.date | date: "%F" }} by {{ site.author.name }}</h6>
+        <summary>{{item.excerpt}}</summary>
+        <p class='articleFooter clearfix'>
+            <a class='readMore' href="{{ item.link }}">阅读全文</a>
+            <span class="comment">0条评论</span>
+        </p>
+    </article>
+</li>

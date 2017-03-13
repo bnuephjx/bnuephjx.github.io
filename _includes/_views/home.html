@@ -1,72 +1,12 @@
 <div class="blogContent clearfix">
     <div class="blogContentLeft">
         <ul class="indexArticleList">
-            <li>
-                <article>
-                    <h3><a href='javascript:;' title="文章的大标题">文章的大标题</a></h3>
-                    <h6 class="time">2015-09-20 by Evan</h6>
-                    <summary>Jekyll-Jacman 是为 Jekyll 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 Jacman 移植而来</summary>
-                    <p class='articleFooter clearfix'>
-                        <a class='readMore' href="blogInfo.html">阅读全文</a>
-                        <span class="comment">0条评论</span>
-                    </p>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <h3><a href='javascript:;' title="文章的大标题">文章的大标题</a></h3>
-                    <h6 class="time">2015-09-20 by Evan</h6>
-                    <summary>Jekyll-Jacman 是为 Jekyll 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 Jacman 移植而来</summary>
-                    <p class='articleFooter clearfix'>
-                        <a class='readMore' href="blogInfo.html">阅读全文</a>
-                        <span class="comment">0条评论</span>
-                    </p>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <h3><a href='javascript:;' title="文章的大标题">文章的大标题</a></h3>
-                    <h6 class="time">2015-09-20 by Evan</h6>
-                    <summary>Jekyll-Jacman 是为 Jekyll 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 Jacman 移植而来</summary>
-                    <p class='articleFooter clearfix'>
-                        <a class='readMore' href="blogInfo.html">阅读全文</a>
-                        <span class="comment">0条评论</span>
-                    </p>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <h3 class=""><a href='javascript:;' title="文章的大标题">文章的大标题</a></h3>
-                    <h6 class="time">2015-09-20 by Evan</h6>
-                    <summary>Jekyll-Jacman 是为 Jekyll 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 Jacman 移植而来</summary>
-                    <p class='articleFooter clearfix'>
-                        <a class='readMore' href="blogInfo.html">阅读全文</a>
-                        <span class="comment">0条评论</span>
-                    </p>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <h3 class="blogTitle"><a href='javascript:;' title="文章的大标题">文章的大标题</a></h3>
-                    <h6 class="time">2015-09-20 by Evan</h6>
-                    <summary>Jekyll-Jacman 是为 Jekyll 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 Jacman 移植而来</summary>
-                    <p class='articleFooter clearfix'>
-                        <a class='readMore' href="blogInfo.html">阅读全文</a>
-                        <span class="comment">0条评论</span>
-                    </p>
-                </article>
-            </li>
-            <li>
-                <article>
-                    <h3><a href='javascript:;' title="文章的大标题">文章的大标题</a></h3>
-                    <h6 class="time">2015-09-20 by Evan</h6>
-                    <summary>Jekyll-Jacman 是为 Jekyll 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 Jacman 移植而来</summary>
-                    <p class='articleFooter clearfix'>
-                        <a class='readMore' href="blogInfo.html">阅读全文</a>
-                        <span class="comment">0条评论</span>
-                    </p>
-                </article>
-            </li>
+            {% for post in paginator.posts %}
+                {% assign item = post %}
+                {% assign index = true %}
+                {% assign desc = true %}
+                {% include _component/archive.html %}
+            {% endfor %}
         </ul>
         <div class="pagenavi clearfix">
             <a class="prev" href="javascript:;">上一页</a>
