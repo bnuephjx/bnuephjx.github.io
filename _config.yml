@@ -7,8 +7,7 @@ linenos: true
 highlight:
   linenos: true
 
-highlight_options:
-  linenos: true
+
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
