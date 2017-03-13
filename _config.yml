@@ -3,10 +3,7 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 #### Code Highlighter 高亮代码
 highlighter: rouge
-highlighter:
-    css_class: 'highlight'
-    span:
-        line_numbers: true
+linenos: true
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
