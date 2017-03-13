@@ -1,5 +1,3 @@
-# Jekyll-Jacman
-
 **中文 | [English](/README_en.md)**
 
 Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
@@ -73,14 +71,4 @@ bundle exec jekyll server
 - **其他**
  你可以设置侧边栏在博文页面中不显示。
 
-##关于 Kramdown 引擎
-由于 Github 不再支持原来的 redcarpet，因此每次更新时都会有 Page build warning 发到邮件。我新建了一个分支 kramdown，把 Markdown 引擎换成了 kramdown，把高亮换成了 rough。但是，kramdown 的 markdown 语法比较严格，我不喜欢。所以，你也可以像我一样建个规则过滤 Page build warning 邮件。
 
-##协议
-[MIT](/LICENSE)
-
-##捐赠
-
-支付宝捐赠链接还是要有的，万一真的有人捐呢。
-
-![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
