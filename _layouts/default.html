@@ -15,7 +15,8 @@
 </head>
 
 <body id="BnuephjxBlog">
-	{% include page.viewHeader %}
+	{% assign viewHeader = page.viewHeader %}
+	{% include viewHeader %}
 	{{ content }}
 </body>
 
