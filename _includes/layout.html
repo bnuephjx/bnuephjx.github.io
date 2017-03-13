@@ -15,7 +15,7 @@
   </body>
 </html>
 {% elsif page.layout == 'page' %}
-    {% include _partial/head.html %}
+    {% include _component/headerInformation.html %}
       <body>
         <header>
           {% include _partial/header.html %}
@@ -28,7 +28,7 @@
       </body>
      </html>
 {% elsif page.layout == 'search' %}
-{% include _partial/head.html %}
+{% include _component/headerInformation.html %}
     <body>
       <header>
         {% include _partial/header.html %}
@@ -41,7 +41,7 @@
     </body>
    </html>
 {% elsif page.layout == 'categories' or page.layout == 'tags' or page.layout == 'archives' %}
-  {% include _partial/head.html %}
+  {% include _component/headerInformation.html %}
     <body>
       <header>
         {% include _partial/header.html %}
@@ -54,7 +54,7 @@
     </body>
    </html>
 {% else %}
-        {% include _partial/head.html %}
+       {% include _component/headerInformation.html %}
   <body>
     <header>
         {% include _partial/header.html %}
