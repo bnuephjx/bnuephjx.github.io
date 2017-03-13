@@ -1,6 +1,6 @@
 {% if page.layout == 'post' or page.layout == 'photo' %}
  {% include _component/headerInformation.html %}
-  <body>
+  <body id="BnuephjxBlog">
     <header>
         {% include _partial/header.html %}
     </header>
@@ -10,52 +10,52 @@
       {% assign table = true %}
       {% include _partial/sidebar.html %}
     </div>
-    <footer>{% include _partial/footer.html %}</footer>
-    {% include _partial/after_footer.html %}
+    {% include _component/footer.html %}
+    {% include _component/footerWithJS.html %}
   </body>
 </html>
 {% elsif page.layout == 'page' %}
     {% include _component/headerInformation.html %}
-      <body>
+      <body id="BnuephjxBlog">
         <header>
           {% include _partial/header.html %}
         </header>
         <div id="container">
           {{ content }}
         </div>
-        <footer>{% include _partial/footer.html %}</footer>
-        {% include _partial/after_footer.html %}
+        {% include _component/footer.html %}
+        {% include _component/footerWithJS.html %}
       </body>
      </html>
 {% elsif page.layout == 'search' %}
 {% include _component/headerInformation.html %}
-    <body>
+    <body id="BnuephjxBlog">
       <header>
         {% include _partial/header.html %}
       </header>
       <div id="container">
       {% include _partial/search.html %}
       </div>
-      <footer>{% include _partial/footer.html %}</footer>
-      {% include _partial/after_footer.html %}
+      {% include _component/footer.html %}
+      {% include _component/footerWithJS.html %}
     </body>
    </html>
 {% elsif page.layout == 'categories' or page.layout == 'tags' or page.layout == 'archives' %}
   {% include _component/headerInformation.html %}
-    <body>
+    <body id="BnuephjxBlog">
       <header>
         {% include _partial/header.html %}
       </header>
       <div id="container">
         {{ content }}
       </div>
-      <footer>{% include _partial/footer.html %}</footer>
-      {% include _partial/after_footer.html %}
+      {% include _component/footer.html %}
+      {% include _component/footerWithJS.html %}
     </body>
    </html>
 {% else %}
        {% include _component/headerInformation.html %}
-  <body>
+  <body id="BnuephjxBlog">
     <header>
         {% include _partial/header.html %}
     </header>
@@ -65,8 +65,8 @@
       {% assign table = false %}
       {% include _partial/sidebar.html %}
     </div>
-    <footer>{% include _partial/footer.html %}</footer>
-    {% include _partial/after_footer.html %}
+    {% include _component/footer.html %}
+    {% include _component/footerWithJS.html %}
   </body>
  </html>
 {% endif %}
