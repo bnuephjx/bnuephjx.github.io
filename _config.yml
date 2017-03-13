@@ -3,6 +3,8 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
 #### Code Highlighter 高亮代码
 highlighter: rouge
+
+#### 代码高亮带上行号
 highlight:
   linenos: true
 
