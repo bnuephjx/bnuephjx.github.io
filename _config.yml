@@ -12,7 +12,11 @@ permalink: /:categories/:year/:month/:day/:title
 markdown: kramdown
 kramdown:
     input: GFM
-
+    syntax_highlighter: rouge
+    syntax_highlighter_opts:
+        css_class: 'highlight'
+        span:
+            line_numbers: true
 #### Default Attributes 默认属性
 defaults:
   -
