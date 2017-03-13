@@ -1,0 +1,21 @@
+<div class="blogHead">
+	<div class="blogHeadInner">
+		<div class="logoBox">
+			<a href="blog.html">
+				<img class="logo" src="{{ site.assets }}/{{ site.imglogo.src }}" alt="bnuephjx个人博客"/>
+				<div class="logoBlog">
+					<p>{{ site.author.name }}</p>
+					<p>个人博客</p>
+				</div>
+			</a>
+		</div>
+		<div class="blogNav clearfix">
+			<ul class="blogNavUl">
+				{% for item in site.menu %}
+					<li><a href="{{ site.baseurl }}{{ m[1] }}">{{ m[0] }}</a></li>
+					<li class="divide">|</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
