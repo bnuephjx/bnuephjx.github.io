@@ -12,13 +12,13 @@ highlight:
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:categories/:year/:month/:day/:title
 
 #### Markdown Processors
 markdown: kramdown
 kramdown:
     input: GFM
-    
+
 #### Default Attributes 默认属性
 defaults:
   -
@@ -69,7 +69,7 @@ rss: /atom.xml ## RSS address.
 
 #### Image 图片
 imglogo:
-  enable: true             ## 是否显示网站 logo   display image logo true/false.  
+  enable: true             ## 是否显示网站 logo   display image logo true/false.
   src: img/logo.png        ## 选择图片   `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
 favicon: img/favicon.ico   ## 网址图标   size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
 apple_icon: img/jacman.jpg ## 苹果设备上的图标  size:114px*114px,please put image into the theme folder `/jacman/source/img`.
@@ -81,15 +81,15 @@ index:
   expand: true           ## 是否开启阅读全文 default is unexpanding,so you can only see the short description of each post.
   excerpt_link: '阅读全文' ## 自定义名字
 
-close_aside: false  ##是否在文章页面自动关闭侧边栏 close sidebar in post page if true 
+close_aside: false  ##是否在文章页面自动关闭侧边栏 close sidebar in post page if true
 mathjax: true      #enable mathjax if true
 share_button: true #是否设置分享按钮 enable share buttons if true
 
 #### Author information 作者个人信息
 author:
   name: 'Evan'      ## e.g. wuchong Author name
-  intro_line1:  "Hello ,I'm Larry Page in Google."    ## your introduction on the bottom of the page
-  intro_line2:  "This is my blog,believe it or not."  ## the 2nd line
+  intro_line1:  ## "Hello ,I'm Larry Page in Google."    ## your introduction on the bottom of the page
+  intro_line2:  ## "This is my blog,believe it or not."  ## the 2nd line
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   tsina:      ## e.g. 2176287895  Your weibo ID,It will be used in share button.
@@ -123,7 +123,7 @@ disqus_shortname:     ## e.g. wuchong   your disqus short name.
 #### Share button 分享按钮
 jiathis:
   enable: false ## 默认使用主题内建分享 if you use jiathis as your share tool,the built-in share tool won't be display.
-  id:    ## e.g. 1889330 your jiathis ID. 
+  id:    ## e.g. 1889330 your jiathis ID.
   tsina: ## e.g. 2176287895 Your weibo id,It will be used in share button.
 
 #### Analytics 网站统计
@@ -148,10 +148,10 @@ totop: true           ## 回到顶部 if you want to scroll to top in every post
 google_cse:
   enable: false
   cx: 018294693190868310296:abnhpuysycw  ## e.g. 018294693190868310296:abnhpuysycw your Custom Search ID.
-## https://www.google.com/cse/ 
+## https://www.google.com/cse/
 ## To enable the custom search You must create a "search" folder in '/source' and a "index.md" file
 ## set the 'front-matter' as
-## layout: search 
+## layout: search
 ## title: search
 ## ---
 baidu_search:     ## http://zn.baidu.com/
