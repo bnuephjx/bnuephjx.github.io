@@ -1,62 +1,12 @@
-{% if page.layout == 'post' or page.layout == 'photo' %}
+<!DOCTYPE html>
+<html>
  {% include _component/headerInformation.html %}
   <body id="BnuephjxBlog">
     {% include _component/header.html %}
     <div id="container">
       {{ content }}
-      {% assign item = page %}
-      {% assign table = true %}
-      {% include _partial/sidebar.html %}
     </div>
     {% include _component/footer.html %}
     {% include _component/footerWithJS.html %}
   </body>
 </html>
-{% elsif page.layout == 'page' %}
-    {% include _component/headerInformation.html %}
-      <body id="BnuephjxBlog">
-        {% include _component/header.html %}
-        <div id="container">
-          {{ content }}
-        </div>
-        {% include _component/footer.html %}
-        {% include _component/footerWithJS.html %}
-      </body>
-     </html>
-{% elsif page.layout == 'search' %}
-{% include _component/headerInformation.html %}
-    <body id="BnuephjxBlog">
-      {% include _component/header.html %}
-      <div id="container">
-      {% include _partial/search.html %}
-      </div>
-      {% include _component/footer.html %}
-      {% include _component/footerWithJS.html %}
-    </body>
-   </html>
-{% elsif page.layout == 'categories' or page.layout == 'tags' or page.layout == 'archives' %}
-  {% include _component/headerInformation.html %}
-    <body id="BnuephjxBlog">
-      {% include _component/header.html %}
-      <div id="container">
-        {{ content }}
-      </div>
-      {% include _component/footer.html %}
-      {% include _component/footerWithJS.html %}
-    </body>
-   </html>
-{% else %}
-       {% include _component/headerInformation.html %}
-  <body id="BnuephjxBlog">
-    {% include _component/header.html %}
-    <div id="container">
-      {{ content }}
-      {% assign item = page %}
-      {% assign table = false %}
-      {% include _partial/sidebar.html %}
-    </div>
-    {% include _component/footer.html %}
-    {% include _component/footerWithJS.html %}
-  </body>
- </html>
-{% endif %}
