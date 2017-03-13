@@ -1,5 +1,65 @@
 ---
-layout: default
 ---
+{% assign lang = site.data.languages[site.language] %}
+<!DOCTYPE html>
+<html>
 
-{% include post.html %}
+<head>
+    {% include _component/headerInformation.html %}
+</head>
+
+<body id="BnuephjxBlog">
+    {% include _component/header.html %}
+    <div class="blogContent clearfix">
+        <div class="blogContentLeft">
+            <div class="blogInfo">
+                <h3>{{page.title}}</h3>
+                <h6 class='time'>{{ item.date | date: "%F" }} by {{ site.author.name }}</h6>
+             	{% include _views/post.html %}
+            </div>
+            <div class="pagenavi clearfix pagenaviInfo">
+                <a class="prev" href="javascript:;">
+                上一篇:<span>js继承</span>
+            </a>
+                <a class="next" href="javascript:;">
+                下一篇:<span>代码高亮的使用</span>
+            </a>
+            </div>
+        </div>
+        <div class="blogContentRight">
+            <div class="classify">
+                <div class="blogTxt">分类</div>
+                <ul class='classifyBox'>
+                    <li>
+                        <a href="javascript:;">
+                            <p class="txt">
+                                常用指令
+                            </p>
+                            <span class='classifyNum'>1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <p class="txt">
+                                前端资料
+                            </p>
+                            <span class='classifyNum'>99+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <p class="txt">
+                                学习总结
+                            </p>
+                            <span class='classifyNum'>43</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include _component/footer.html %}
+    <div class='backTop'>↑</div>
+</body>
+
+</html>
