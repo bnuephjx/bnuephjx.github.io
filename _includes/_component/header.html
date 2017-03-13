@@ -12,7 +12,7 @@
 		<div class="blogNav clearfix">
 			<ul class="blogNavUl">
 				{% for item in site.menu %}
-					<li><a href="{{ site.baseurl }}{{ m[1] }}">{{ m[0] }}</a></li>
+					<li><a href="{{ site.baseurl }}{{ item[1] }}">{{ item[0] }}</a></li>
 					<li class="divide">|</li>
 				{% endfor %}
 			</ul>
