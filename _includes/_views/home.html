@@ -39,7 +39,7 @@
     </div>
     <div class="blogContentRight">
         {% for widget in site.widgets %}
-          {% include _component/categorie.html %}
+          {% include _widget/{{widget}}.html %}
         {% endfor %}
     </div>
 </div>
