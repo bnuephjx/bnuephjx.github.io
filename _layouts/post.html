@@ -14,17 +14,28 @@
         <div class="blogContentLeft">
             <div class="blogInfo">
                 <h3>{{page.title}}</h3>
-                <h6 class='time'>{{ page.date | date: "%F" }} by {{ site.author.name }}</h6>
+                <h6 class='time'>{{ page.date | date: "%F" }} by {{ page.author }}</h6>
              	{% include _views/post.html %}
             </div>
-            <div class="pagenavi clearfix pagenaviInfo">
-                <a class="prev" href="javascript:;">
-                上一篇:<span>js继承</span>
-            </a>
-                <a class="next" href="javascript:;">
-                下一篇:<span>代码高亮的使用</span>
-            </a>
-            </div>
+
+            <!-- 当上一篇或者下一篇存在的情况下 -->
+            {% if page.previous or page.next %}
+                <div class="pagenavi clearfix pagenaviInfo">
+                    <!-- 上一篇 -->
+                    {% if page.previous %}
+                        <a class="prev" href="{{page.previous.url}}" title='{{page.previous.title}}'>
+                            上一篇:<span>js继承</span>
+                        </a>
+                    {% endif %}
+
+                    <!-- 下一篇 -->
+                    {% if page.next %}
+                        <a class="next" href="{{page.next.url}}" title='{{page.next.title}}'>
+                            下一篇:<span>代码高亮的使用</span>
+                        </a>
+                    {% endif%}
+                </div>
+            {% endif %}
         </div>
         <div class="blogContentRight">
             <div class="classify">

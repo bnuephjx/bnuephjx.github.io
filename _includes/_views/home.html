@@ -1,20 +1,40 @@
 <div class="blogContent clearfix">
     <div class="blogContentLeft">
         <ul class="indexArticleList">
+            <!-- 首页文章展示 -->
             {% for post in paginator.posts %}
                 {% assign item = post %}
                 {% assign index = true %}
                 {% assign desc = true %}
+                <!-- 调用存档组件 -->
                 {% include _component/archive.html %}
             {% endfor %}
         </ul>
-        <div class="pagenavi clearfix">
-            <a class="prev" href="javascript:;">上一页</a>
-            <span class="pageNum current">1</span>
-            <a class="pageNum" href="javascript:;" page-num="2">2</a>
-            <a class="pageNum" href="javascript:;" page-num="3">3</a>
-            <a class="next" href="javascript:;">下一页</a>
-        </div>
+
+        <!-- 总页数大于1页的时候启动分页 -->
+        {% if paginator.total_pages > 1 %}
+            <!-- 上一页 -->
+            {% if paginator.previous_page %}
+                <a class="prev" href="{{ paginator.previous_page_path }}">上一页</a>
+            {% endif %}
+
+            <!-- 页码 -->
+            {% for page in (1..paginator.total_pages) %}
+                {% if paginator.page == page %}
+                    <span class="pageNum current">{{ page }}</span>
+                {% elsif page == 1 %}
+                    <a class="pageNum" href="/">{{ page }}</a>
+                {% else %}
+                  <a href="/page{{ i }}">{{ page }}</a>
+                {% endif %}
+            {% endfor %}
+
+            <!-- 下一页 -->
+            {% if paginator.next_page %}
+                <a class="next" href="{{ paginator.next_page_path }}">下一页</a>
+            {% endif %}
+
+        {% endif %}
     </div>
     <div class="blogContentRight">
         <div class="classify">
