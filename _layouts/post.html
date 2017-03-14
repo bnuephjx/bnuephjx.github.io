@@ -24,14 +24,14 @@
                     <!-- 上一篇 -->
                     {% if page.previous %}
                         <a class="prev" href="{{page.previous.url}}" title='{{page.previous.title}}'>
-                            上一篇:<span>js继承</span>
+                            上一篇:<span>{{page.previous.title}}</span>
                         </a>
                     {% endif %}
 
                     <!-- 下一篇 -->
                     {% if page.next %}
                         <a class="next" href="{{page.next.url}}" title='{{page.next.title}}'>
-                            下一篇:<span>代码高亮的使用</span>
+                            下一篇:<span>{{page.next.title}}</span>
                         </a>
                     {% endif%}
                 </div>
