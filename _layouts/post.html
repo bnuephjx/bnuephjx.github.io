@@ -38,7 +38,9 @@
             {% endif %}
         </div>
         <div class="blogContentRight">
-            {% include _component/categorie.html %}
+            {% for widget in site.widgets %}
+              {% include _widget/categorie.html %}
+            {% endfor %}
         </div>
     </div>
     {% include _component/footer.html %}
