@@ -1652,9 +1652,13 @@ body {
 #BnuephjxBlog .blogContent .blogContentRight .classify .classifyBox li {
   position: relative;
   border-bottom: 1px solid #f2f2f5;
+  padding-right: 30px;
 }
 #BnuephjxBlog .blogContent .blogContentRight .classify .classifyBox li:last-child {
   border-bottom: none;
+}
+#BnuephjxBlog .blogContent .blogContentRight .classify .classifyBox li a {
+  display: block;
 }
 #BnuephjxBlog .blogContent .blogContentRight .classify .classifyBox li .txt {
   height: 30px;
@@ -1662,7 +1666,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 147px;
 }
 #BnuephjxBlog .blogContent .blogContentRight .classify .classifyBox li .classifyNum {
   position: absolute;
@@ -1734,6 +1737,7 @@ body {
   font-size: 14px;
 }
 #BnuephjxBlog .backTop {
+  display: none;
   position: fixed;
   width: 40px;
   height: 40px;
@@ -1762,7 +1766,7 @@ body {
   -o-opacity: 1;
   opacity: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 1014px) {
   #BnuephjxBlog .blogHead .blogHeadInner,
   #BnuephjxBlog .blogContent,
   #BnuephjxBlog .blogFooter .blogFooterInner {
@@ -1771,6 +1775,19 @@ body {
   #BnuephjxBlog .blogContent .blogContentLeft,
   #BnuephjxBlog .blogContent .blogContentRight {
     width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1013px) {
+  #BnuephjxBlog .blogHead .blogHeadInner,
+  #BnuephjxBlog .blogContent,
+  #BnuephjxBlog .blogFooter .blogFooterInner {
+    width: 95%;
+  }
+  #BnuephjxBlog .blogContent .blogContentLeft {
+    width: 74.5%;
+  }
+  #BnuephjxBlog .blogContent .blogContentRight {
+    width: 22%;
   }
 }
 @media (max-width: 320px) {
