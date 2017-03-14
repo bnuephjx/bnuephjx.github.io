@@ -14,7 +14,7 @@
         <div class="blogContentLeft">
             <div class="blogInfo">
                 <h3>{{page.title}}</h3>
-                <h6 class='time'>{{ item.date | date: "%F" }} by {{ site.author.name }}</h6>
+                <h6 class='time'>{{ page.date | date: "%F" }} by {{ site.author.name }}</h6>
              	{% include _views/post.html %}
             </div>
             <div class="pagenavi clearfix pagenaviInfo">
