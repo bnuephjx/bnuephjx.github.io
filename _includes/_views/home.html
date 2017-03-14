@@ -13,6 +13,7 @@
 
         <!-- 总页数大于1页的时候启动分页 -->
         {% if paginator.total_pages > 1 %}
+        <div class="pagenavi clearfix">
             <!-- 上一页 -->
             {% if paginator.previous_page %}
                 <a class="prev" href="{{ paginator.previous_page_path }}">上一页</a>
@@ -33,7 +34,7 @@
             {% if paginator.next_page %}
                 <a class="next" href="{{ paginator.next_page_path }}">下一页</a>
             {% endif %}
-
+        </div>
         {% endif %}
     </div>
     <div class="blogContentRight">
