@@ -32,7 +32,7 @@
                 {% endfor %}
 
             {% capture currentPage %}{{paginator.page}}{% endcapture %}
-            {% elsif (paginator.total_pages | minus:currentPage ) <= 3 %}
+            {% elsif (paginator.total_pages - currentPage ) <= 3 %}
                 {% capture minusPage %}{{paginator.total_pages | minus:3 }}{% endcapture %}
                 {% for page in (minusPage..paginator.total_pages) %}
                     {% if paginator.page == page %}
