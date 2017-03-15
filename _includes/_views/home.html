@@ -17,16 +17,43 @@
                 <a class="prev" href="{{ paginator.previous_page_path }}">上一页</a>
             {% endif %}
 
+            {% if (paginator.page | minus:3) <= 0 %}
+                {% for page in (1..previous_page) %}
+                    {% if paginator.page == page %}
+                        <span class="pageNum current">{{ page }}</span>
+                    {% else %}
+                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
+                    {% endif %}
+                    {% if forloop.last %}
+                        <span class="pageNum current">...</span>
+                    {% endif %}
+                {% endfor %}
+
+            {% capture currentPage %}{{paginator.page}}{% endcapture %}
+            {% elsif (paginator.total_pages | minus:currentPage ) <= 3 %}
+                {% capture minusPage %}{{paginator.total_pages | minus:3 }}{% endcapture %}
+                {% for page in (minusPage..paginator.total_pages) %}
+                    {% if paginator.page == page %}
+                        <span class="pageNum current">{{ page }}</span>
+                    {% else %}
+                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% for page in (paginator.previous_page..paginator.next_page) %}
+                    {% if paginator.page == page %}
+                        <span class="pageNum current">{{ page }}</span>
+                    {% else %}
+                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
+                    {% endif %}
+                    {% if forloop.last %}
+                        <span class="pageNum current">...</span>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
             <!-- 页码 -->
-            {% for page in (1..paginator.total_pages) limit:4 %}
-                {% if paginator.page == page %}
-                    <span class="pageNum current">{{ page }}</span>
-                {% elsif page == 1 %}
-                    <a class="pageNum" href="/">{{ page }}</a>
-                {% else %}
-                  <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
-                {% endif %}
-            {% endfor %}
+            
 
             <!-- 下一页 -->
             {% if paginator.next_page %}
