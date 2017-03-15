@@ -9,7 +9,7 @@
 					<p class="txt">
 						{{ item[0] }}
 					</p>
-					{% if item[1] | size > 3 %}
+					{% if item[1].size > 3 %}
 						<span class='classifyNum'>3+</span>
 					{% else %}
 						<span class='classifyNum'>{{ item[1] | size }}</span>
