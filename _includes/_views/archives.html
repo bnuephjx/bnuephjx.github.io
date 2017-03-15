@@ -1,16 +1,7 @@
 <div class="blogContent clearfix">
     <section class="blogArchives">
         {% capture postGroupByYear %}{{ site.posts.date | date: "%Y" }}{% endcapture %}
-        <!-- {% capture postGroupByYear %}{{ site.posts | group_by:"date" }}{% endcapture %} -->
-        {% for item in postGroupByYear  %}
-            <li class="eui-timeline-item">
-                <div class="eui-timeline-tail"></div>
-                <div class="eui-timeline-head-custom">
-                    <i class="glyphicon glyphicon-time"></i>
-                </div>
-                <div class="eui-timeline-content">{{item}}</div>
-            </li>
-        {% endfor %}
+        <p> {{postGroupByYear}} </p>
         <ul class="eui-timeline">
             <li class="eui-timeline-item">
                 <div class="eui-timeline-tail"></div>
