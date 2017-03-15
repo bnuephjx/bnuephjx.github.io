@@ -3,6 +3,7 @@
         <ul class="indexArticleList">
             <!-- 首页文章展示 -->
             {% for post in paginator.posts %}
+                {% assign item = post %}
                 <!-- 调用存档组件 -->
                 {% include _component/archive.html %}
             {% endfor %}
