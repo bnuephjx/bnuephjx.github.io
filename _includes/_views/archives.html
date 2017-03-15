@@ -1,47 +1,15 @@
 <div class="blogContent clearfix">
     <section class="blogArchives">
-        <ul class="eui-timeline">
+        {% capture postGroupByYear %}{{ site.posts | group_by:"date" }}{% endcapture %}
+        {% for item in postGroupByYear  %}
             <li class="eui-timeline-item">
                 <div class="eui-timeline-tail"></div>
                 <div class="eui-timeline-head-custom">
                     <i class="glyphicon glyphicon-time"></i>
                 </div>
-                <div class="eui-timeline-content">2017年</div>
+                <div class="eui-timeline-content">{{item}}</div>
             </li>
-            <li class="eui-timeline-item">
-                <div class="eui-timeline-tail"></div>
-                <div class="eui-timeline-head">
-                </div>
-                <div class="eui-timeline-content">
-                    <a href="blogInfo.html">
-                        <span class="item-time">05-18</span>
-                        <span>代码高亮</span>
-                    </a>
-                </div>
-            </li>
-            <li class="eui-timeline-item">
-                <div class="eui-timeline-tail"></div>
-                <div class="eui-timeline-head">
-                </div>
-                <div class="eui-timeline-content">
-                    <a href="blogInfo.html">
-                        <span class="item-time">05-18</span>
-                        <span>代码高亮</span>
-                    </a>
-                </div>
-            </li>
-            <li class="eui-timeline-item">
-                <div class="eui-timeline-tail"></div>
-                <div class="eui-timeline-head">
-                </div>
-                <div class="eui-timeline-content">
-                    <a href="blogInfo.html">
-                        <span class="item-time">05-18</span>
-                        <span>代码高亮</span>
-                    </a>
-                </div>
-            </li>
-        </ul>
+        {% endfor %}
         <ul class="eui-timeline">
             <li class="eui-timeline-item">
                 <div class="eui-timeline-tail"></div>
