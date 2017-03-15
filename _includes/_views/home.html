@@ -27,6 +27,7 @@
                     {% endif %}
                     {% if forloop.last %}
                         <span class="pageNum current">...</span>
+                        <a class="pageNum" href="/page{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
                     {% endif %}
                 {% endfor %}
 
@@ -49,6 +50,7 @@
                     {% endif %}
                     {% if forloop.last %}
                         <span class="pageNum current">...</span>
+                        <a class="pageNum" href="/page{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
                     {% endif %}
                 {% endfor %}
             {% endif %}
