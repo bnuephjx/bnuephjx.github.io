@@ -7,20 +7,10 @@
             <ul class="eui-timeline">
                 <li class="eui-timeline-item">
                     <div class="eui-timeline-tail"></div>
-                    {% if forloop.first %}
-                        <div class="eui-timeline-head-custom">
-                            <i class="glyphicon glyphicon-time"></i>
-                        </div>
-                        <div class="eui-timeline-content">{{item.date | date: "%Y" }}</div>
-                    {% else %}
-                        <div class="eui-timeline-head"></div>
-                        <div class="eui-timeline-content">
-                            <a href="blogInfo.html">
-                                <span class="item-time">{{item.date | date: "%Y" }}</span>
-                                <span>代码高亮</span>
-                            </a>
-                        </div>
-                    {% endif %}
+                    <div class="eui-timeline-head-custom">
+                        <i class="glyphicon glyphicon-time"></i>
+                    </div>
+                    <div class="eui-timeline-content">{{item.date | date: "%Y" }}</div>
                 </li>
             </ul>
             {% endif %}
@@ -28,5 +18,12 @@
     </section>
 </div>
 <div class='backTop'>↑</div>
+<!--  <div class="eui-timeline-head"></div>
+                        <div class="eui-timeline-content">
+                            <a href="blogInfo.html">
+                                <span class="item-time">{{item.date | date: "%Y" }}</span>
+                                <span>代码高亮</span>
+                            </a>
+                        </div> -->
 {% include _component/footerWithJS.html %}
 
