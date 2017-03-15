@@ -15,11 +15,12 @@
                 {% for subItem in site.posts  %}
                     {% if (subItem.date | date: "%Y") ==  currentDate %}
                     <li class="eui-timeline-item">
+                        <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
                         <div class="eui-timeline-content">
                             <a href="blogInfo.html">
                                 <span class="item-time">{{subItem.date | date: "%Y" }}</span>
-                                <span>代码高亮2</span>
+                                <span>{{subItem.title}}</span>
                             </a>
                         </div>
                     </li>
