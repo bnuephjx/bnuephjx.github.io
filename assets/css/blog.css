@@ -1658,7 +1658,7 @@ body {
   border-bottom: none;
 }
 #BnuephjxBlog .blogContent .blogContentRight .classify .classifyBox li a {
-  display: block;
+  max-width: 100%;
 }
 #BnuephjxBlog .blogContent .blogContentRight .classify .classifyBox li .txt {
   height: 30px;
