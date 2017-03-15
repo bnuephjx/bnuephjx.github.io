@@ -1,14 +1,25 @@
 <div class="blogContent clearfix">
     <section class="blogArchives">
+        <ul class="eui-timeline">
         {% for item in site.posts  %}
             <li class="eui-timeline-item">
                 <div class="eui-timeline-tail"></div>
                 <div class="eui-timeline-head-custom">
                     <i class="glyphicon glyphicon-time"></i>
                 </div>
-                <div class="eui-timeline-content">{{item.date | date: "%Y" }}</div>
+                {% if forloop.index == 0 %}
+                     <div class="eui-timeline-content">{{item.date | date: "%Y" }}</div>
+                {% else %}
+                    <div class="eui-timeline-content">
+                        <a href="blogInfo.html">
+                            <span class="item-time">{{item.date | date: "%Y" }}</span>
+                            <span>代码高亮</span>
+                        </a>
+                    </div>
+                {% endif %}
             </li>
         {% endfor %}
+        </ul>
         <ul class="eui-timeline">
             <li class="eui-timeline-item">
                 <div class="eui-timeline-tail"></div>
