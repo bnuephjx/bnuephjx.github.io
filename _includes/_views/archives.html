@@ -8,7 +8,9 @@
                 <div class="eui-timeline-head-custom">
                     <i class="glyphicon glyphicon-time"></i>
                 </div>
-                <div class="eui-timeline-content">{{item.size}}</div>
+                {% for i in item  %}
+                    <div class="eui-timeline-content">{{i.size}}</div>
+                {% endfor %}
             </li>
         {% endfor %}
         <ul class="eui-timeline">
