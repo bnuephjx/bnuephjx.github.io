@@ -1,9 +1,11 @@
 <div class="blogContent clearfix">
     <section class="blogArchives">
+        <!-- 时间轴 -->
         {% for item in site.posts  %}
             {% capture currentDate %}{{ item.date | date: "%Y" }}{% endcapture %}
             {% capture prevDate %}{{ item.previous.date | date: "%Y"}}{% endcapture %}
-            {% if prevDate !=  currentDate %}
+            <!-- 通过当前跟之前对比时间分类时间段，以年为单位 -->
+            {% if currentDate !=  prevDate %}
             <ul class="eui-timeline">
                 <li class="eui-timeline-item">
                     <div class="eui-timeline-tail"></div>
@@ -12,6 +14,7 @@
                     </div>
                     <div class="eui-timeline-content">{{item.date | date: "%Y" }}</div>
                 </li>
+                <!-- 然后再遍历所有的，当前文章是否是同一年的 -->
                 {% for subItem in site.posts  %}
                     {% capture currentSubDate %}{{ subItem.date | date: "%Y" }}{% endcapture %}
                     {% if currentSubDate ==  currentDate %}
@@ -19,7 +22,7 @@
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
                         <div class="eui-timeline-content">
-                            <a href="blogInfo.html">
+                            <a href="{{ site.baseurl }}{{ subItem.url }}#more">
                                 <span class="item-time">{{subItem.date | date: "%Y" }}</span>
                                 <span>{{subItem.title}}</span>
                             </a>
@@ -33,12 +36,5 @@
     </section>
 </div>
 <div class='backTop'>↑</div>
-<!--  <div class="eui-timeline-head"></div>
-                        <div class="eui-timeline-content">
-                            <a href="blogInfo.html">
-                                <span class="item-time">{{item.date | date: "%Y" }}</span>
-                                <span>代码高亮</span>
-                            </a>
-                        </div> -->
 {% include _component/footerWithJS.html %}
 
