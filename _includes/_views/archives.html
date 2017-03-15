@@ -13,7 +13,8 @@
                     <div class="eui-timeline-content">{{item.date | date: "%Y" }}</div>
                 </li>
                 {% for subItem in site.posts  %}
-                    {% if (subItem.date | date: "%Y") ==  currentDate %}
+                    {% capture currentSubDate %}{{ subItem.date | date: "%Y" }}{% endcapture %}
+                    {% if currentSubDate ==  currentDate %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
