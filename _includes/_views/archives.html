@@ -1,14 +1,12 @@
 <div class="blogContent clearfix">
     <section class="blogArchives">
-        {% capture ByYear %}{{ site.posts.date | date: "%Y" }}{% endcapture %}
-        {% capture postGroupByYear %}{{ site.posts | group_by:ByYear }}{% endcapture %}
-        {% for item in postGroupByYear  %}
+        {% for item in site.posts  %}
             <li class="eui-timeline-item">
                 <div class="eui-timeline-tail"></div>
                 <div class="eui-timeline-head-custom">
                     <i class="glyphicon glyphicon-time"></i>
                 </div>
-                <div class="eui-timeline-content">{{postGroupByYear}}</div>
+                <div class="eui-timeline-content">{{item.date}}</div>
             </li>
         {% endfor %}
         <ul class="eui-timeline">
