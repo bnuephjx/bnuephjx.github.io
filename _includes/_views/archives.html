@@ -12,6 +12,17 @@
                     </div>
                     <div class="eui-timeline-content">{{item.date | date: "%Y" }}</div>
                 </li>
+                {% if (item.date | date: "%Y") ==  currentDate %}
+                <li class="eui-timeline-item">
+                    <div class="eui-timeline-head"></div>
+                    <div class="eui-timeline-content">
+                        <a href="blogInfo.html">
+                            <span class="item-time">{{item.date | date: "%Y" }}</span>
+                            <span>代码高亮</span>
+                        </a>
+                    </div>
+                </li>
+                {% endif %}
             </ul>
             {% endif %}
         {% endfor %}
