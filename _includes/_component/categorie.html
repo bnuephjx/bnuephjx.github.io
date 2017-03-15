@@ -9,8 +9,9 @@
 					<p class="txt">
 						{{ item[0] }}
 					</p>
-					{% if item[1].size > 3 %}
-						<span class='classifyNum'>3+</span>
+					<!-- 通过这里获取数量 -->
+					{% if item[1].size > 99 %}
+						<span class='classifyNum'>99+</span>
 					{% else %}
 						<span class='classifyNum'>{{ item[1] | size }}</span>
 					{% endif %}
