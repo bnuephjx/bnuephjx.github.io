@@ -4,6 +4,20 @@
         <h6 class="time">{{ item.date | date: "%F" }} by {{ site.author.name }}</h6>
         <summary>{{item.description}}</summary>
         <p class='articleFooter clearfix'>
+            {% if page.categories %}
+            <span class="comment">
+                <strong>分类:</strong>
+                <a href='javascript:;'>{{page.categories}}}</a>
+            </span>
+            {% endif %}
+            {% if page.tags | size !=0 %}
+            <span class="comment">
+                <strong>标签:</strong>
+                {% for item in page.tags %}
+                    <a href='javascript:;'>{{item}}</a>
+                {% endfor %}
+            </span>
+            {% endif %}
             <a class='readMore' href="{{ site.baseurl }}{{ item.url }}#more">阅读全文</a>
             <!-- 暂时隐藏评论 -->
             <!-- <span class="comment">0条评论</span> -->
