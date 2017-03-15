@@ -18,7 +18,7 @@
             {% endif %}
 
             <!-- 页码 -->
-            {% for page in (1..paginator.total_pages) %}
+            {% for page in (1..paginator.total_pages) limit:4 %}
                 {% if paginator.page == page %}
                     <span class="pageNum current">{{ page }}</span>
                 {% elsif page == 1 %}
@@ -32,36 +32,6 @@
             {% if paginator.next_page %}
                 <a class="next" href="{{ paginator.next_page_path }}">下一页</a>
             {% endif %}
-        </div>
-        {% endif %}
-
-
-        {% if paginator.total_pages > 1 %}
-        <div class="pagenavi clearfix">
-            {% if paginator.page > 1 %}
-                <a class="prev" href="{{ paginator.previous_page_path }}">上一页</a>
-            {% endif %}
-            {% assign pageSize = 5 %}
-            {% assign startPage = paginator.page | minus:pageSize %}
-            {% if 2 > startPage %}
-            {%  assign startPage = 2 %}
-            {% endif %}
-            {% assign endPage = paginator.page | plus:pageSize %}
-            {% if endPage >= paginator.total_pages %}
-            {%  assign endPage = paginator.total_pages | minus:1 %}
-            {% endif %}
-            {% for count in (startPage..endPage) %}
-                {% if count == paginator.page %}
-                    <span class="pageNum current">{{ count }}</span>
-                {% else %}
-                    <a class="pageNum" href="/page{{ count }}">{{ count }}</a>
-                {% endif %}
-            {% endfor %}
-            {% if paginator.next_page %}
-                <a class="next" href="{{ paginator.next_page_path }}">下一页</a>
-            {% endif %}
-            <a class="next" href="/page{{paginator.total_pages}}">末页</a>
-            <p>第{{paginator.page}}页 / 共{{paginator.total_pages}}页</p>
         </div>
         {% endif %}
     </div>
