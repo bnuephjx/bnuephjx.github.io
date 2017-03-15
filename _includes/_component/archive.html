@@ -8,7 +8,9 @@
             {% if item.categories %}
             <span class="comment">
                 <strong>分类:</strong>
-                <a href='javascript:;'>{{item.categories}}</a>
+                {% for i in item.categories %}
+                    <a href='javascript:;'>{{i}}</a>
+                {% endfor %}
             </span>
             {% endif %}
             {% if item.tags | size !=0 %}
