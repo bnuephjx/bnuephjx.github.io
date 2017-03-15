@@ -1,21 +1,20 @@
+{% if site.categories | size != 0 %}
 <div class="classify">
 	<div class="blogTxt">分类</div>
 	<ul class='classifyBox'>
 		<!-- key[0]表示名称，value[1]表示数量  -->
-		{% if site.categories | size != 0 %}
-			{% for item in site.categories %}
-				{% if item[1] | size != 0 %}
-					<li>
-						<a href="{{ site.baseurl }}/categories/#{{ item[0] }}" title="{{ item[0] }}">
-							<p class="txt">
-								{{ item[0] }}
-							</p>
-							<span class='classifyNum'>{{ item[1] | size }}</span>
-						</a>
-					</li>
-				{% endif %}
-			{% endfor %}
-		{% endif %}
+		{% for item in site.categories %}
+			{% if item[1] | size != 0 %}
+				<li>
+					<a href="{{ site.baseurl }}/categories/#{{ item[0] }}" title="{{ item[0] }}">
+						<p class="txt">
+							{{ item[0] }}
+						</p>
+						<span class='classifyNum'>{{ item[1] | size }}</span>
+					</a>
+				</li>
+			{% endif %}
+		{% endfor %}
 	</ul>
 </div>
-
+{% endif %}
