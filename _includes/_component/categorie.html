@@ -10,7 +10,11 @@
 						<p class="txt">
 							{{ item[0] }}
 						</p>
-						<span class='classifyNum'>{{ item[1] | size }}</span>
+						{% if item[1] | size > 1 %}
+							<span class='classifyNum'>1+</span>
+						<% else %>
+							<span class='classifyNum'>{{ item[1] | size }}</span>
+						<% endif %>
 					</a>
 				</li>
 			{% endif %}
