@@ -14,6 +14,7 @@
         <div class="pagenavi clearfix">
             <!-- 上一页 -->
             {% if paginator.previous_page %}
+                <a class="home" href="/">首页</a>
                 <a class="prev" href="{{ paginator.previous_page_path }}">上一页</a>
             {% endif %}
 
@@ -50,9 +51,10 @@
                 {% endfor %}
             {% endif %}
 
-
+            <span class="pageNum">共3页</span>
             <!-- 下一页 -->
             {% if paginator.next_page %}
+                <a class="last" href="/page{{ paginator.total_pages }}">末页</a>
                 <a class="next" href="{{ paginator.next_page_path }}">下一页</a>
             {% endif %}
         </div>
