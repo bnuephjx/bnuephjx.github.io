@@ -18,7 +18,7 @@
             {% endif %}
 
             <!-- 页码 -->
-            {% if (paginator.page | minus:3) <= 0 %}
+            {% if ( paginator.page - 3 ) <= 0 %}
                 {% for page in (1..paginator.next_page) %}
                     {% if paginator.page == page %}
                         <span class="pageNum current">{{ page }}</span>
