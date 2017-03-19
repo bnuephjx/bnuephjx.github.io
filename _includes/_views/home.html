@@ -22,7 +22,7 @@
                 {% for page in (1..paginator.next_page) %}
                     {% if paginator.page == page %}
                         <span class="pageNum current">{{ page }}</span>
-                    {% elsif paginator.page== 1 %}
+                    {% elsif paginator.page == 0 %}
                         <a class="pageNum" href="/">{{ page }}</a>
                     {% else %}
                         <a class="pageNum" href="/page{{page}}">{{ page }}</a>
