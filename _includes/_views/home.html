@@ -10,8 +10,6 @@
         </ul>
 
         <!-- 总页数大于1页的时候启动分页 -->
-        {% capture currPage %}{{ paginator.page | size }}{% endcapture %}
-        {% capture fPage %}{{ currPage - 3 | size }}{% endcapture %}
         {% if paginator.total_pages > 1 %}
         <div class="pagenavi clearfix">
             <!-- 上一页 -->
@@ -20,7 +18,7 @@
             {% endif %}
 
             <!-- 页码 -->
-            {% if fPage <= 0 %}
+            {% if (paginator.page | minus:3) <= 0 %}
                 {% for page in (1..paginator.next_page) %}
                     {% if paginator.page == page %}
                         <span class="pageNum current">{{ page }}</span>
