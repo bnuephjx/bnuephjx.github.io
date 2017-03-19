@@ -1442,7 +1442,7 @@ body {
   *display: inline;
   *zoom: 1;
   font-weight: bold;
-  font-style: oblique;
+  line-height: 18px;
 }
 #BnuephjxBlog .blogHead .blogHeadInner .logoBox a .logo {
   width: 40px;
