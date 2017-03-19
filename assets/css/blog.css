@@ -1584,11 +1584,17 @@ body {
   font-size: 14px;
   padding: 0 10px;
 }
+#BnuephjxBlog .blogContent .blogContentLeft .pagenavi .home {
+  margin-right: 10px;
+}
 #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .prev {
   float: left;
 }
 #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .next {
   float: right;
+}
+#BnuephjxBlog .blogContent .blogContentLeft .pagenavi .last {
+  margin-left: 10px;
 }
 #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .prev,
 #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .next {
