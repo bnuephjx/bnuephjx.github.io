@@ -25,10 +25,7 @@
                     {% elsif paginator.page == 0 %}
                         <a class="pageNum" href="/">{{ page }}</a>
                     {% else %}
-                        <a class="pageNum" href="/page{{page}}">{{ page }}</a>
-                    {% endif %}
-                    {% if forloop.last %}
-                        <span class="pageNum current">...</span>
+                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
                     {% endif %}
                 {% endfor %}
 
