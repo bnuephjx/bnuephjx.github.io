@@ -1412,6 +1412,7 @@ body {
 }
 #BnuephjxBlog {
   background-color: #99d6f3;
+  overflow-x: hidden;
 }
 #BnuephjxBlog .blogHead {
   height: 60px;
@@ -1766,17 +1767,6 @@ body {
   -o-opacity: 1;
   opacity: 1;
 }
-@media (max-width: 1014px) {
-  #BnuephjxBlog .blogHead .blogHeadInner,
-  #BnuephjxBlog .blogContent,
-  #BnuephjxBlog .blogFooter .blogFooterInner {
-    width: 95%;
-  }
-  #BnuephjxBlog .blogContent .blogContentLeft,
-  #BnuephjxBlog .blogContent .blogContentRight {
-    width: 100%;
-  }
-}
 @media (min-width: 768px) and (max-width: 1013px) {
   #BnuephjxBlog .blogHead .blogHeadInner,
   #BnuephjxBlog .blogContent,
@@ -1790,16 +1780,29 @@ body {
     width: 22%;
   }
 }
+@media (min-width: 321px) and (max-width: 767px) {
+  #BnuephjxBlog .blogHead .blogHeadInner,
+  #BnuephjxBlog .blogContent,
+  #BnuephjxBlog .blogFooter .blogFooterInner {
+    width: 95%;
+  }
+  #BnuephjxBlog .blogContent .blogContentLeft,
+  #BnuephjxBlog .blogContent .blogContentRight {
+    width: 100%;
+  }
+}
 @media (max-width: 320px) {
   #BnuephjxBlog .blogHead,
   #BnuephjxBlog .blogFooter {
-    width: 319px;
+    width: 320px;
   }
-  #BnuephjxBlog .blogContent {
+  #BnuephjxBlog .blogHead .blogHeadInner,
+  #BnuephjxBlog .blogContent,
+  #BnuephjxBlog .blogFooter .blogFooterInner {
     width: 310px;
   }
   #BnuephjxBlog .blogContent .blogContentLeft,
   #BnuephjxBlog .blogContent .blogContentRight {
-    width: 290px;
+    width: 100%;
   }
 }
