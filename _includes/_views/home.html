@@ -20,7 +20,7 @@
 
             <!-- 页码 -->
             {% if paginator.next_page %}
-                {% capture plusPage %}{{ paginator.next_page | plus:1 }}{% endcapture %}
+                {% capture plusPage %}{{ ( paginator.next_page | plus:1 ) }}{% endcapture %}
                 {% if plusPage >= paginator.total_pages %}
                     {% capture plusPage %}{{ paginator.total_pages }}{% endcapture %}
                 {% endif %}
