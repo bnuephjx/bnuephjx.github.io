@@ -1687,7 +1687,8 @@ body {
   padding: 1px 4px;
   border-radius: 4px;
 }
-#BnuephjxBlog .blogContent .blogArchives {
+#BnuephjxBlog .blogContent .blogArchives,
+#BnuephjxBlog .blogContent .blogCategories {
   background-color: #ffffff;
   padding: 10px;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
@@ -1695,41 +1696,52 @@ body {
   border-radius: 2px;
   background-color: white;
 }
-#BnuephjxBlog .blogContent .blogArchives .eui-timeline {
+#BnuephjxBlog .blogContent .blogArchives .eui-timeline,
+#BnuephjxBlog .blogContent .blogCategories .eui-timeline {
   border-bottom: 1px dashed #d9d9bc;
   margin-bottom: 20px;
 }
-#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item {
+#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item,
+#BnuephjxBlog .blogContent .blogCategories .eui-timeline .eui-timeline-item {
   padding: 0;
 }
-#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item:first-child .eui-timeline-tail {
+#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item:first-child .eui-timeline-tail,
+#BnuephjxBlog .blogContent .blogCategories .eui-timeline .eui-timeline-item:first-child .eui-timeline-tail {
   left: 5px;
   top: 19px;
   height: 48%;
 }
-#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item:first-child .eui-timeline-head-custom {
+#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item:first-child .eui-timeline-head-custom,
+#BnuephjxBlog .blogContent .blogCategories .eui-timeline .eui-timeline-item:first-child .eui-timeline-head-custom {
   margin-top: 10px;
   font-size: 18px;
   color: #f60;
 }
-#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item:first-child .eui-timeline-head-custom + .eui-timeline-content {
+#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item:first-child .eui-timeline-head-custom + .eui-timeline-content,
+#BnuephjxBlog .blogContent .blogCategories .eui-timeline .eui-timeline-item:first-child .eui-timeline-head-custom + .eui-timeline-content {
   font-size: 14px;
   font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item .eui-timeline-tail {
+#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item .eui-timeline-tail,
+#BnuephjxBlog .blogContent .blogCategories .eui-timeline .eui-timeline-item .eui-timeline-tail {
   height: 113%;
 }
-#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item .eui-timeline-head {
+#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item .eui-timeline-head,
+#BnuephjxBlog .blogContent .blogCategories .eui-timeline .eui-timeline-item .eui-timeline-head {
   width: 10px;
   height: 10px;
   top: 3px;
   left: 1px;
 }
-#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item .eui-timeline-content {
+#BnuephjxBlog .blogContent .blogArchives .eui-timeline .eui-timeline-item .eui-timeline-content,
+#BnuephjxBlog .blogContent .blogCategories .eui-timeline .eui-timeline-item .eui-timeline-content {
   padding: 0 0 8px 24px;
+}
+#BnuephjxBlog .blogContent .blogCategories {
+  margin-bottom: 10px;
 }
 #BnuephjxBlog .blogFooter {
   height: 40px;
