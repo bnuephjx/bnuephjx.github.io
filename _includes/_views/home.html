@@ -27,7 +27,7 @@
             {% endif %}
 
             {% if paginator.page == 1 %}
-                {% for page in (1..nextPage %}
+                {% for page in (1..plusPage %}
                     {% if paginator.page == page %}
                         <span class="pageNum current">{{ page }}</span>
                     {% elsif page == 1 %}
