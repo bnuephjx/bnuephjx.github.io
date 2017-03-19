@@ -1798,6 +1798,10 @@ body {
   #BnuephjxBlog .blogContent .blogContentRight {
     width: 100%;
   }
+  #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .prev,
+  #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .next {
+    display: none;
+  }
 }
 @media (max-width: 320px) {
   #BnuephjxBlog .blogHead,
