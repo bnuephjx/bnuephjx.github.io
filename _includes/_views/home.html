@@ -51,7 +51,7 @@
                 {% endfor %}
             {% endif %}
 
-            <span class="pageNum">共3页</span>
+            <span class="pageNum">共{{ paginator.total_pages }}页</span>
             <!-- 下一页 -->
             {% if paginator.next_page %}
                 <a class="last" href="/page{{ paginator.total_pages }}">末页</a>
