@@ -20,7 +20,7 @@
 
             <!-- 页码 -->
             {% if paginator.page == 1 %}
-                {% for page in (1..paginator.next_page) %}
+                {% for page in (1..(paginator.next_page | plus:1 | size)) %}
                     {% if paginator.page == page %}
                         <span class="pageNum current">{{ page }}</span>
                     {% elsif page == 1 %}
@@ -40,7 +40,7 @@
                     {% endif %}
                 {% endfor %}
             {% else %}
-                {% for page in (paginator.previous_page..paginator.next_page) %}
+                {% for page in (paginator.previous_page..(paginator.next_page | plus:1 | size)) %}
                     {% if paginator.page == page %}
                         <span class="pageNum current">{{ page }}</span>
                     {% elsif page == 1 %}
