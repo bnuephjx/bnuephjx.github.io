@@ -31,27 +31,7 @@
                     {% endif %}
                 {% endfor %}
 
-            <!-- {% elsif (paginator.total_pages - currentPage ) <= 3 %}
-                {% capture minusPage %}{{paginator.total_pages | minus:3 }}{% endcapture %}
-                {% for page in (minusPage..paginator.total_pages) %}
-                    {% if paginator.page == page %}
-                        <span class="pageNum current">{{ page }}</span>
-                    {% else %}
-                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
-                    {% endif %}
-                {% endfor %}
-            {% else %}
-                {% for page in (paginator.previous_page..paginator.next_page) %}
-                    {% if paginator.page == page %}
-                        <span class="pageNum current">{{ page }}</span>
-                    {% else %}
-                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
-                    {% endif %}
-                    {% if forloop.last %}
-                        <span class="pageNum current">...</span>
-                        <a class="pageNum" href="/page{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
-                    {% endif %}
-                {% endfor %} -->
+
             {% endif %}
 
             <!-- 下一页 -->
