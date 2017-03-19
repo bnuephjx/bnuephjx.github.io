@@ -19,8 +19,8 @@
 
             <!-- 页码 -->
             {% if (paginator.page | minus:3) <= 0 %}
-                {% for page in (1..paginator.next_page) %}
-                    {% if paginator.page == page %}
+                {% for page in (paginator.page..paginator.next_page) %}
+                    {% if paginator.page == page or paginator.page== 1 %}
                         <span class="pageNum current">{{ page }}</span>
                     {% else %}
                         <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
@@ -31,7 +31,6 @@
                     {% endif %}
                 {% endfor %}
 
-            {% capture currentPage %}{{paginator.page}}{% endcapture %}
             {% elsif (paginator.total_pages - currentPage ) <= 3 %}
                 {% capture minusPage %}{{paginator.total_pages | minus:3 }}{% endcapture %}
                 {% for page in (minusPage..paginator.total_pages) %}
