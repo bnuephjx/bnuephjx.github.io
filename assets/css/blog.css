@@ -1587,10 +1587,12 @@ body {
 #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .home {
   margin-right: 10px;
 }
+#BnuephjxBlog .blogContent .blogContentLeft .pagenavi .home,
 #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .prev {
   float: left;
 }
-#BnuephjxBlog .blogContent .blogContentLeft .pagenavi .next {
+#BnuephjxBlog .blogContent .blogContentLeft .pagenavi .next,
+#BnuephjxBlog .blogContent .blogContentLeft .pagenavi .last {
   float: right;
 }
 #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .last {
