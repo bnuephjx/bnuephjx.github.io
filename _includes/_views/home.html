@@ -19,8 +19,15 @@
             {% endif %}
 
             <!-- 页码 -->
+            {% if paginator.next_page %}
+                {% capture plusPage %}{{ paginator.next_page | plus:1 }}{% endcapture %}
+                {% if plusPage >= paginator.total_pages %}
+                    {% capture plusPage %}{{ paginator.total_pages }}{% endcapture %}
+                {% endif %}
+            {% endif %}
+
             {% if paginator.page == 1 %}
-                {% for page in (1..(paginator.next_page | plus:1 | size)) %}
+                {% for page in (1..nextPage %}
                     {% if paginator.page == page %}
                         <span class="pageNum current">{{ page }}</span>
                     {% elsif page == 1 %}
@@ -40,7 +47,7 @@
                     {% endif %}
                 {% endfor %}
             {% else %}
-                {% for page in (paginator.previous_page..(paginator.next_page | plus:1 | size)) %}
+                {% for page in (paginator.previous_page..plusPage) %}
                     {% if paginator.page == page %}
                         <span class="pageNum current">{{ page }}</span>
                     {% elsif page == 1 %}
