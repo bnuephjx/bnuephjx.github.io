@@ -11,7 +11,7 @@
                     </div>
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
-                {% for p in site.categories.item[0] %}
+                {% for p in item[1] | size %}
                     <div class="eui-timeline-content">{{ p.url }}</div>
                 {% endfor %}
             </ul>
