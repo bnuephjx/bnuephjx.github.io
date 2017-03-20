@@ -1,1 +1,10 @@
-<div>{{ subItem.title }}</div>
+<li class="eui-timeline-item">
+    <div class="eui-timeline-tail"></div>
+    <div class="eui-timeline-head"></div>
+    <div class="eui-timeline-content">
+        <a href="{{ site.baseurl }}{{ subItem.url }}#more">
+            <span class="item-time">{{subItem.date | date: "%m-%d" }}</span>
+            <span>{{subItem.title}}</span>
+        </a>
+    </div>
+</li>

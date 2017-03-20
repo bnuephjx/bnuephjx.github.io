@@ -10,19 +10,14 @@
                     </div>
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
-                {% capture currentPages %}{{ item[1] }}{% endcapture %}
                 {% for post in site.posts %}
-                  {% assign subItem = post %}
-                  {% include _component/category.html %}
-                {% endfor %}
-                {% for subPages in currentPages  %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
                         <div class="eui-timeline-content">
-                            <a href="{{ site.baseurl }}{{ subItem.url }}#more">
-                                <span class="item-time">{{subItem.date | date: "%m-%d" }}</span>
-                                <span>{{subItem.title}}</span>
+                            <a href="{{ site.baseurl }}/categories/" title="" >
+                                <span class="item-time">{{post.date | date: "%m-%d" }}</span>
+                                <span>{{post.title}}</span>
                             </a>
                         </div>
                     </li>
