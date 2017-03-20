@@ -13,7 +13,7 @@ highlight:
 #### Permalink 最后将转换为网址上看的路径，下面的路径是
 ### /分类/年/月/日/文字标题
 # For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title
+permalink: /:categories
 
 #### Markdown Processors
 markdown: kramdown
