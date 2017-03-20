@@ -12,7 +12,7 @@
                     <div class="eui-timeline-head-custom">
                         <i class="glyphicon glyphicon-time"></i>
                     </div>
-                    <div class="eui-timeline-content">{{ currentDate }}</div>
+                    <div class="eui-timeline-content" id="#{{ currentDate }}">{{ currentDate }}</div>
                 </li>
                 <!-- 然后再遍历所有的，当前文章是否是同一年的 -->
                 {% for subItem in site.posts  %}
