@@ -1,7 +1,6 @@
 <div class="blogContent clearfix">
     <div class="blogContentLeft">
         <section class="blogCategories">
-        {% if site.categories | size != 0 %}
         {% for item in site.categories  %}
             <ul class="eui-timeline">
                 <li class="eui-timeline-item">
@@ -28,7 +27,6 @@
                 {% endfor %}
             </ul>
         {% endfor %}
-        {% endif %}
         </section>
     </div>
     <div class="blogContentRight">
