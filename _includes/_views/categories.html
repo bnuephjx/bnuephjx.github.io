@@ -1,7 +1,6 @@
 <div class="blogContent clearfix">
     <div class="blogContentLeft">
         <section class="blogCategories">
-        <div class="eui-timeline-content">{{ site.baseurl }}{{ page.url }}</div>
         {% if site.categories | size != 0 %}
         {% for item in site.categories  %}
             <ul class="eui-timeline">
@@ -13,6 +12,9 @@
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                     <div class="eui-timeline-content">{{ item[1] }}</div>
                 </li>
+                {% for p in site.categories.item[0] %}
+                    {{ p.url }}
+                {% endfor %}
             </ul>
         {% endfor %}
         {% endif %}
