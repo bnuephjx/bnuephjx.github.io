@@ -1,18 +1,18 @@
 <div class="blogContent clearfix">
     <div class="blogContentLeft">
         <section class="blogCategories">
-        {% for category in site.categories  %}
+        {% for item in site.categories  %}
             <ul class="eui-timeline">
                 <li class="eui-timeline-item">
                     <div class="eui-timeline-tail"></div>
                     <div class="eui-timeline-head-custom">
                         <i class="glyphicon glyphicon-time"></i>
                     </div>
-                    <div class="eui-timeline-content">{{ category[0] }}</div>
+                    <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
-                {% capture currentCategory %}{{ category }}{% endcapture %}
+                {% capture currentPage %}{{ item }}{% endcapture %}
                 {% for subItem in site.posts  %}
-                    <span>{{ currentCategory }}</span>
+                    <span>{{ currentPage.categories }}</span>
                     <span>{{ subItem.categories }}</span>
                     {% if subItem.categories ==  category %}
                     <li class="eui-timeline-item">
