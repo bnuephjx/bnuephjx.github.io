@@ -9,7 +9,7 @@
                     <div class="eui-timeline-head-custom">
                         <i class="glyphicon glyphicon-time"></i>
                     </div>
-                    <div class="eui-timeline-content">{{ item[0] }}</div>
+                    <div class="eui-timeline-content" id="#{{ item[0] }}">{{ item[0] }}</div>
                 </li>
                 {% for p in item[1] | size %}
                     <li class="eui-timeline-item">
