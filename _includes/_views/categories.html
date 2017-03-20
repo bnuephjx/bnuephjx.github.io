@@ -1,6 +1,7 @@
 <div class="blogContent clearfix">
     <div class="blogContentLeft">
         <section class="blogCategories">
+        {% if site.categories | size != 0 %}
         {% for item in site.categories  %}
             <ul class="eui-timeline">
                 <li class="eui-timeline-item">
@@ -10,23 +11,10 @@
                     </div>
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
-                {% capture currentName %}{{ item[0] }}{% endcapture %}
-                {% for post in site.posts %}
-                    {% if post.categories === currentName %}
-                        <li class="eui-timeline-item">
-                            <div class="eui-timeline-tail"></div>
-                            <div class="eui-timeline-head"></div>
-                            <div class="eui-timeline-content">
-                                <a href="{{ site.baseurl }}/categories/#{{ currentName }}" title="{{ currentName }}" >
-                                    <span class="item-time">{{post.date | date: "%m-%d" }}</span>
-                                    <span>{{post.title}}</span>
-                                </a>
-                            </div>
-                        </li>
-                    {% endif %}
-                {% endfor %}
+               
             </ul>
         {% endfor %}
+        {% endif %}
         </section>
     </div>
     <div class="blogContentRight">
