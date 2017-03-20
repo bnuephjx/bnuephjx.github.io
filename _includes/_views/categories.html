@@ -13,7 +13,7 @@
                 </li>
                 {% capture currentName %}{{ item[0] }}{% endcapture %}
                 {% for p in item[1] | size %}
-                <div class="eui-timeline-tail">{{ p.categories }}</div>
+                <div class="eui-timeline-tail">{{ page.categories }}</div>
                 <div class="eui-timeline-tail">{{ currentName }}</div>
                     {% if p.categories == currentName %}
                     <li class="eui-timeline-item">
