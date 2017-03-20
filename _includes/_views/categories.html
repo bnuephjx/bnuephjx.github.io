@@ -11,9 +11,11 @@
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
                 {% capture currentPages %}{{ item[1] }}{% endcapture %}
+                {% for post in site.posts %}
+                  {% assign subItem = post %}
+                  {% include _component/category.html %}
+                {% endfor %}
                 {% for subPages in currentPages  %}
-                    {% assign subItem = subPages %}
-                    {% include _component/category.html %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
