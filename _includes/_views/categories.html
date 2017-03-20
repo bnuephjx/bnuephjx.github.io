@@ -10,10 +10,9 @@
                         <i class="glyphicon glyphicon-time"></i>
                     </div>
                     <div class="eui-timeline-content">{{ item[0] }}</div>
-                    <div class="eui-timeline-content">{{ item[1] }}</div>
                 </li>
                 {% for p in site.categories.item[0] %}
-                    {{ p.url }}
+                    <div class="eui-timeline-content">{{ p.url }}</div>
                 {% endfor %}
             </ul>
         {% endfor %}
