@@ -1810,8 +1810,8 @@ body {
   #BnuephjxBlog .blogContent .blogContentRight {
     width: 100%;
   }
-  #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .prev,
-  #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .next {
+  #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .home,
+  #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .last {
     display: none;
   }
 }
@@ -1828,5 +1828,9 @@ body {
   #BnuephjxBlog .blogContent .blogContentLeft,
   #BnuephjxBlog .blogContent .blogContentRight {
     width: 100%;
+  }
+  #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .home,
+  #BnuephjxBlog .blogContent .blogContentLeft .pagenavi .last {
+    display: none;
   }
 }
