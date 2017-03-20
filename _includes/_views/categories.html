@@ -12,6 +12,7 @@
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
                 {% for p in item[1] | size %}
+                    {% if p.categories == item[0] %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
@@ -22,6 +23,7 @@
                             </a>
                         </div>
                     </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         {% endfor %}
