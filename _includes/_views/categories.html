@@ -10,11 +10,9 @@
                     </div>
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
-                {% capture currentPage %}{{ item[0] }}{% endcapture %}
-                {% for subItem in site.posts  %}
-                    <span>{{ currentPage }}</span>
-                    <span>{{ subItem.categories }}</span>
-                    {% if subItem.categories ==  currentPage %}
+                {% capture currentPages %}{{ item[1] }}{% endcapture %}
+                {% for subItem in currentPages  %}
+                    {% if subItem.categories %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
