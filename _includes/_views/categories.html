@@ -11,11 +11,7 @@
                     </div>
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
-                {% capture currentName %}{{ item[0] }}{% endcapture %}
                 {% for p in item[1] | size %}
-                <div class="eui-timeline-tail">{{ page.categories }}</div>
-                <div class="eui-timeline-tail">{{ currentName }}</div>
-                    {% if p.categories == currentName %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
@@ -26,7 +22,6 @@
                             </a>
                         </div>
                     </li>
-                    {% endif %}
                 {% endfor %}
             </ul>
         {% endfor %}
@@ -34,29 +29,7 @@
         </section>
     </div>
     <div class="blogContentRight">
-        {% if site.categories | size != 0 %}
-        <div class="classify">
-            <div class="blogTxt">分类</div>
-            <ul class='classifyBox'>
-                <!-- key[0]表示名称，value[1]表示数量  -->
-                {% for item in site.categories %}
-                    <li>
-                        <a href="/{{ item[0] }}" title="{{ item[0] }}">
-                            <p class="txt">
-                                {{ item[0] }}
-                            </p>
-                            <!-- 通过这里获取数量 -->
-                            {% if item[1].size > 99 %}
-                                <span class='classifyNum'>99+</span>
-                            {% else %}
-                                <span class='classifyNum'>{{ item[1] | size }}</span>
-                            {% endif %}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
+        {% include _component/categorie.html %}
     </div>
 </div>
 <div class='backTop'>↑</div>
