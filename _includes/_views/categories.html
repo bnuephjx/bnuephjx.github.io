@@ -14,7 +14,7 @@
                 {% for subItem in site.posts  %}
                     <span>{{ currentPage }}</span>
                     <span>{{ subItem.categories }}</span>
-                    {% if subItem.categories ==  category %}
+                    {% if subItem.categories ==  currentPage %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
