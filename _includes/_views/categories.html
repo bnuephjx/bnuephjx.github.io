@@ -11,6 +11,7 @@
                     <div class="eui-timeline-content">{{ category[0] }}</div>
                 </li>
                 {% for subItem in site.posts  %}
+                    <span>{{subItem.title}}</span>
                     {% if subItem.categories ==  category %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
