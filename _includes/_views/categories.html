@@ -1,7 +1,7 @@
 <div class="blogContent clearfix">
     <div class="blogContentLeft">
         <section class="blogCategories">
-        <div class="eui-timeline-content">{{ page.path }}</div>
+        <div class="eui-timeline-content">{{ site.baseurl }}{{ page.url }}</div>
         {% if site.categories | size != 0 %}
         {% for item in site.categories  %}
             <ul class="eui-timeline">
