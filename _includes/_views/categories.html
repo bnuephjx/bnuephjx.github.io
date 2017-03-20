@@ -11,8 +11,9 @@
                     </div>
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
+                {% capture currentName %}{{ item[0] }}{% endcapture %}
                 {% for p in item[1] | size %}
-                    {% if p.categories == item[0] %}
+                    {% if p.categories == currentName %}
                     <li class="eui-timeline-item">
                         <div class="eui-timeline-tail"></div>
                         <div class="eui-timeline-head"></div>
