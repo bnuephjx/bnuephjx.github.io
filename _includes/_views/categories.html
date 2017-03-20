@@ -12,7 +12,16 @@
                     <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
                 {% for p in item[1] | size %}
-                    <div class="eui-timeline-content">{{ p.title }}</div>
+                    <li class="eui-timeline-item">
+                        <div class="eui-timeline-tail"></div>
+                        <div class="eui-timeline-head"></div>
+                        <div class="eui-timeline-content">
+                            <a href="{{ site.baseurl }}{{ p.url }}#more">
+                                <span class="item-time">{{p.date | date: "%m-%d" }}</span>
+                                <span>{{p.title}}</span>
+                            </a>
+                        </div>
+                    </li>
                 {% endfor %}
             </ul>
         {% endfor %}
