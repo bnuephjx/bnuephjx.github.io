@@ -1,25 +1,29 @@
 <div class="blogContent clearfix">
     <div class="blogContentLeft">
         <section class="blogCategories">
-        {% for item in site.posts  %}
+        {% for category in site.categories  %}
             <ul class="eui-timeline">
                 <li class="eui-timeline-item">
                     <div class="eui-timeline-tail"></div>
                     <div class="eui-timeline-head-custom">
                         <i class="glyphicon glyphicon-time"></i>
                     </div>
-                    <div class="eui-timeline-content">{{ item.date }}</div>
+                    <div class="eui-timeline-content">{{ category[0] }}</div>
                 </li>
-                <li class="eui-timeline-item">
-                    <div class="eui-timeline-tail"></div>
-                    <div class="eui-timeline-head"></div>
-                    <div class="eui-timeline-content">
-                        <a href="{{ site.baseurl }}{{ item.url }}">
-                            <span class="item-time">{{ item.date | date: "%m-%d" }}</span>
-                            <span>{{ item.title }}</span>
-                        </a>
-                    </div>
-                </li>
+                {% for subItem in site.posts  %}
+                    {% if subItem.categories ==  category %}
+                    <li class="eui-timeline-item">
+                        <div class="eui-timeline-tail"></div>
+                        <div class="eui-timeline-head"></div>
+                        <div class="eui-timeline-content">
+                            <a href="{{ site.baseurl }}{{ subItem.url }}#more">
+                                <span class="item-time">{{subItem.date | date: "%m-%d" }}</span>
+                                <span>{{subItem.title}}</span>
+                            </a>
+                        </div>
+                    </li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         {% endfor %}
         </section>
