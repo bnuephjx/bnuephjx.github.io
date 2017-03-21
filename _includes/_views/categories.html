@@ -36,7 +36,7 @@
 {% include _component/footerWithJS.html %}
 <script type="text/javascript">
     $(function(){
-        var url = window.location.href.split('?')[0].split('/').pop();
+        var url = window.location.href.split('?')[0].split('/').pop().split('#')[0];
     })
 </script>
 
