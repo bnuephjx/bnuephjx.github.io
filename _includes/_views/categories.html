@@ -3,7 +3,7 @@
     <section class="blogCategories">
     {% if site.categories | size != 0 %}
     {% for item in site.categories  %}
-        <ul class="eui-timeline hide" id="#{{ item[0] }}">
+        <ul class="eui-timeline hide" id="{{ item[0] }}">
             <li class="eui-timeline-item">
                 <div class="eui-timeline-tail"></div>
                 <div class="eui-timeline-head-custom">
