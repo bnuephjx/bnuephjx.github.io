@@ -3,7 +3,7 @@
     <section class="blogCategories">
     {% if site.categories | size != 0 %}
     {% for item in site.categories  %}
-        <ul class="eui-timeline hide" id="{{ item[0] }}">
+        <ul class="eui-timeline js-{{ item[0] }} hide">
             <li class="eui-timeline-item">
                 <div class="eui-timeline-tail"></div>
                 <div class="eui-timeline-head-custom">
@@ -37,7 +37,12 @@
 <script type="text/javascript">
     $(function(){
         var categoryName = window.location.href.split('?')[0].split('/').pop().split('#').pop();
-        $(".blogCategories ul#"+categoryName+"").removeClass("hide");
+        $(".blogCategories ul.js-"+categoryName+"").removeClass("hide");
+        $("a.js-category-link").on("click",function(){
+            var title = $(this).attr("title");
+            $(".blogCategories ul.js-"+title+"").removeClass("hide").siblings('ul').addClass("hide");
+            return false;
+        })
     })
 </script>
 
