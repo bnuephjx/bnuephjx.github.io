@@ -1237,6 +1237,9 @@ li {
 /*
  * 博客常量设置▲▼
  */
+.mt-10 {
+  margin-top: 10px;
+}
 .hide {
   display: none !important;
 }
@@ -1695,6 +1698,25 @@ body {
   padding: 1px 4px;
   border-radius: 4px;
 }
+#BnuephjxBlog .blogContent .blogContentRight .tagsBox {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  background-color: white;
+  border-bottom: 1px solid #f2f2f5;
+}
+#BnuephjxBlog .blogContent .blogContentRight .tagsBox .tagsList {
+  font-size: 14px;
+  padding: 5px;
+}
+#BnuephjxBlog .blogContent .blogContentRight .tagsBox .tagsList li {
+  float: left;
+  padding: 3px 4px;
+  border: 1px solid #d9d9bc;
+  margin: 2px;
+  border-radius: 3px;
+}
 #BnuephjxBlog .blogContent .blogArchives,
 #BnuephjxBlog .blogContent .blogCategories {
   background-color: #ffffff;
@@ -1748,7 +1770,8 @@ body {
 #BnuephjxBlog .blogContent .blogCategories .eui-timeline .eui-timeline-item .eui-timeline-content {
   padding: 0 0 8px 24px;
 }
-#BnuephjxBlog .blogContent .blogCategories {
+#BnuephjxBlog .blogContent .blogCategories,
+#BnuephjxBlog .blogContent .aboutMe {
   margin-bottom: 10px;
 }
 #BnuephjxBlog .blogContent .aboutMe {
@@ -1786,6 +1809,7 @@ body {
 #BnuephjxBlog .blogContent .aboutMe .describeBox li .describe {
   float: left;
   width: 50px;
+  margin-right: 5px;
 }
 #BnuephjxBlog .blogContent .aboutMe .describeBox li .describeInfo {
   overflow: hidden;
