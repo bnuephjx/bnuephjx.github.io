@@ -1237,6 +1237,9 @@ li {
 /*
  * 博客常量设置▲▼
  */
+.hide {
+  display: none !important;
+}
 pre,
 .highlight,
 .highlight pre {
