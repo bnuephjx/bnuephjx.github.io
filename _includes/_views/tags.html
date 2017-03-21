@@ -39,7 +39,7 @@
     $(function(){
         var categoryName = window.location.href.split('?')[0].split('/').pop().split('#').pop();
         $(".blogCategories ul.js-"+categoryName+"").removeClass("hide");
-        $("a.js-tags-link").on("click",function(){
+        $("a.js-tag-link").on("click",function(){
             var title = $(this).attr("title");
             $(".blogCategories ul.js-"+title+"").removeClass("hide").siblings('ul').addClass("hide");
         })
