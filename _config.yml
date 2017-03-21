@@ -30,7 +30,7 @@ defaults:
       layout: "post"
 
 #### Pagination 分页数量
-paginate: 2
+paginate: 5
 
 #### Site 头部信息设置，assets是静态资源路径，例如css
 title : '个人博客'
