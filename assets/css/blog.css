@@ -1243,6 +1243,13 @@ li {
 .hide {
   display: none !important;
 }
+blockquote {
+  margin: 10px 0;
+  padding: 8px 10px 8px 12px;
+  border-left: 5px solid #ccc;
+  background: #F8F8F8;
+  font-size: 13px;
+}
 pre,
 .highlight,
 .highlight pre {
