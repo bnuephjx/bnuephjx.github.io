@@ -77,6 +77,12 @@ description: 最近一个项目要用到拖拽排序，如果你去网上搜索�
     <p>
         4-2.回调事件
     </p>
+    <blockquote>event:浏览器原生的事件；
+	    <br> ui:一个JQuery的ui对象，其中包括helper，position，offset
+	    <br> helper：代表被拖动的元素。ui.helper[0]指的是拖动中的JQuery包装对象，ui.helper.context指的是选择拖动的原生DOM元素，建议console.log打印进行对比
+	    <br> position：当前元素的CSS位置，以{ top, left }形式给出。
+	    <br> offset：当前元素的偏移位置，以{ top, left }形式给出。
+	</blockquote>
     <blockquote>(1)<strong>start</strong>
         <br> 当拖动开始时触发
         <br> 接受两个参数，event和ui
