@@ -1658,9 +1658,6 @@ body {
 #BnuephjxBlog .blogContent .blogContentLeft .blogInfo article a {
   color: #0077dd;
 }
-#BnuephjxBlog .blogContent .blogContentLeft .blogInfo article pre {
-  display: none;
-}
 #BnuephjxBlog .blogContent .blogContentRight {
   float: right;
   width: 200px;
