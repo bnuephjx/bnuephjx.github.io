@@ -10,94 +10,91 @@ description: 最近一个项目要用到拖拽排序，如果你去网上搜索�
 ---
 
 <article class="infoContent">
-    <h4 class="infoSubTitle">描述</h4>
-    <p>
-        这几天接到一个项目要用到拖拽排序，如果你去网上搜索的话，应该会搜到Sortable.js，这个是脱离jquery使用，比较轻量，而项目里面已经集合了jquery，所以这次依旧使用jquery的插件draggable，droppable， sortable。
-    </p>
-    <p><a href="http://rubaxa.github.io/Sortable/" target="_blank">Sortable插件</a>请点击跳转到它的官网进行下载</p>
-    <p><a href="http://jqueryui.com/download/" target="_blank">jquery插件</a>请点击跳转到它的官网进行下载，可以全部下载，也可以根据自己需要进行下载</p>
-    <h4 class="infoSubTitle">draggable:拖拽</h4>
-    <p>
-        别的不说，先上它相关的<a href="http://www.css88.com/jquery-ui-api/draggable/" target="_blank">中文文档</a>
-        <br /> 英文学霸请到它的
-        <a href="http://api.jqueryui.com/draggable/" target="_blank">官方英文文档</a>查看
-    </p>
-    <p>
-        1.首先，我们要先引入相关的js,先引入jquery库，再引入jquery-ui
-    </p>
-    {% highlight ruby %}
+	<h4 class="infoSubTitle">描述</h4>
+	<p>
+		这几天接到一个项目要用到拖拽排序，如果你去网上搜索的话，应该会搜到Sortable.js，这个是脱离jquery使用，比较轻量，而项目里面已经集合了jquery，所以这次依旧使用jquery的插件draggable，droppable， sortable。
+	</p>
+	<p><a href="http://rubaxa.github.io/Sortable/" target="_blank">Sortable插件</a>请点击跳转到它的官网进行下载</p>
+	<p><a href="http://jqueryui.com/download/" target="_blank">jquery插件</a>请点击跳转到它的官网进行下载，可以全部下载，也可以根据自己需要进行下载</p>
+	<h4 class="infoSubTitle">draggable:拖拽</h4>
+	<p>
+		别的不说，先上它相关的<a href="http://www.css88.com/jquery-ui-api/draggable/" target="_blank">中文文档</a><br />
+		英文学霸请到它的<a href="http://api.jqueryui.com/draggable/" target="_blank">官方英文文档</a>查看
+	</p>
+	<p>
+		1.首先，我们要先引入相关的js,先引入jquery库，再引入jquery-ui
+	</p>
+	{% highlight ruby linenos %}
 	<script src="自己项目插件地址/jquery-1.9.1.js"></script>
 	<script src="自己项目插件地址/jquery-ui.js"></script>//插件都集成在jquery-ui.js
 	{% endhighlight %}
-    <p>
-        2.然后需要在HTML页面上有一个拖拽的目标
-    </p>
-    {% highlight ruby %}
-	<div id="draggable" class="draggable"></div>
-	{% endhighlight %}
-    <p>
-        3.插件进行初始化使用
-    </p>
-    {% highlight ruby %}
+	<p>
+		2.然后需要在HTML页面上有一个拖拽的目标
+	</p>
+	{% highlight ruby linenos %}<div id="draggable" class="draggable"></div>{% endhighlight %}
+	<p>
+		3.插件进行初始化使用
+	</p>
+	{% highlight ruby linenos %}
 	$("#draggable").draggable({//初始化#draggable，初始化之后就可以被拖动
        //这里是配置项设置
     });
-	{% endhighlight %}
-    <p>
-        4.配置项解释(只是列举常用部分，具体请看文档)
-    </p>
-    <p>
-        4-1.常见参数设置
-    </p>
-    <blockquote>(1)<strong>addClasses</strong>
-        <br> 如果值设置为false, ui-draggable样式类将不能被添加引用。true表示ui-draggable样式被添加到该元素.false表示ui-draggable样式不被添加到该元素.
-        <br> 代码样例:$('#draggable').draggable({ addClasses: false });
-    </blockquote>
-    <blockquote>(2)<strong>appendTo</strong>
-        <br> 默认值为parent
-        <br> 具体指当进行拖动时，拖动组件助手应该被添加到的元素，即是用来指定控件在拖动过程中ui.helper的容器
-        <br> 代码样例:$('#draggable').draggable({ appendTo:'body'});
-    </blockquote>
-    <blockquote>(3)<strong>axis</strong>
-        <br> 默认值为false, 不限制拖动的方向,还可以取x,y
-        <br> 具体指约束拖动过程中的取向.
-        <br> 代码样例:$('#draggable').draggable({ axis:'x'});
-    </blockquote>
-    <blockquote>(4)<strong>handle</strong>
-        <br> 默认值为false
-        <br> 指定触发拖动的元素.只有在特定的元素上触发鼠标按下事件时，才可以拖动
-        <br> 代码样例:$( "#draggable" ).draggable({ handle: "h2" });
-    </blockquote>
-    <blockquote>(5)<strong>cursor</strong>
-        <br> 默认值为auto
-        <br> 指定鼠标的样式
-        <br> 代码样例:$( "#draggable" ).draggable({ cursor:'crosshair'});
-    </blockquote>
-    <blockquote>(6)<strong>helper</strong>
-        <br> 默认值为original,指可拖动控件本身移动
-        <br> 当为clone，字面意思，将可拖动控件自身克隆一个移动, 自身在原始位置不变
-        <br> 当是函数的时候就需要注意了，必须返回一个DOM元素
-        <br> 代码样例:$( "#draggable" ).draggable({ helper:'clone'});
-        <br> $( "#draggable" ).draggable({ helper:function(event){ return $(".dom")}});
-    </blockquote>
-    <p>
-        4-2.回调事件
-    </p>
-    <blockquote>(1)<strong>start</strong>
-        <br> 当拖动开始时触发
-        <br> 接受两个参数，event和ui
-        <br> 代码样例:$( ".selector" ).draggable({ start: function( event, ui ) {} });
-    </blockquote>
-    <blockquote>(2)<strong>drag</strong>
-        <br> 当鼠标在拖动过程中移动时触发
-        <br> 接受两个参数，event和ui
-        <br> 代码样例:$( ".selector" ).draggable({ drag: function( event, ui ) {} });
-    </blockquote>
-    <blockquote>(3)<strong>stop</strong>
-        <br> 当拖动停止时触发
-        <br> 接受两个参数，event和ui
-        <br> 代码样例:$( ".selector" ).draggable({ stop: function( event, ui ) {} });
-    </blockquote>
-    <p>今天暂时写到这里，未完待续...</p>
-    <p>本文编写参考于<a href="http://blog.csdn.net/dearkerwin/article/details/8969642" target="_blank">jquery ui（二）draggable,droppable</a></p>
+    {% endhighlight %}
+	<p>
+		4.配置项解释(只是列举常用部分，具体请看文档)
+	</p>
+	<p>
+		4-1.常见参数设置
+	</p>
+	<blockquote>(1)<strong>addClasses</strong><br>
+	如果值设置为false, ui-draggable样式类将不能被添加引用。true表示ui-draggable样式被添加到该元素.false表示ui-draggable样式不被添加到该元素.<br>
+	代码样例:$('#draggable').draggable({ addClasses: false });
+	</blockquote>
+	<blockquote>(2)<strong>appendTo</strong><br>
+	默认值为parent<br>
+	具体指当进行拖动时，拖动组件助手应该被添加到的元素，即是用来指定控件在拖动过程中ui.helper的容器<br>
+	代码样例:$('#draggable').draggable({ appendTo:'body'});
+	</blockquote>
+	<blockquote>(3)<strong>axis</strong><br>
+	默认值为false, 不限制拖动的方向,还可以取x,y<br>
+	具体指约束拖动过程中的取向.<br>
+	代码样例:$('#draggable').draggable({ axis:'x'});
+	</blockquote>
+	<blockquote>(4)<strong>handle</strong><br>
+	默认值为false<br>
+	指定触发拖动的元素.只有在特定的元素上触发鼠标按下事件时，才可以拖动<br>
+	代码样例:$( "#draggable" ).draggable({ handle: "h2" });
+	</blockquote>
+	<blockquote>(5)<strong>cursor</strong><br>
+	默认值为auto<br>
+	指定鼠标的样式<br>
+	代码样例:$( "#draggable" ).draggable({ cursor:'crosshair'});
+	</blockquote>
+	<blockquote>(6)<strong>helper</strong><br>
+	默认值为original,指可拖动控件本身移动<br>
+	当为clone，字面意思，将可拖动控件自身克隆一个移动, 自身在原始位置不变<br>
+	当是函数的时候就需要注意了，必须返回一个DOM元素<br>
+	代码样例:$( "#draggable" ).draggable({ helper:'clone'});<br>
+		   $( "#draggable" ).draggable({ helper:function(event){ return $(".dom")}});
+	</blockquote>
+	<p>
+		4-2.回调事件
+	</p>
+	<blockquote>(1)<strong>start</strong><br>
+	当拖动开始时触发<br>
+	接受两个参数，event和ui<br>
+	代码样例:$( ".selector" ).draggable({ start: function( event, ui ) {} });
+	</blockquote>
+	<blockquote>(2)<strong>drag</strong><br>
+	当鼠标在拖动过程中移动时触发<br>
+	接受两个参数，event和ui<br>
+	代码样例:$( ".selector" ).draggable({ drag: function( event, ui ) {} });
+	</blockquote>
+	<blockquote>(3)<strong>stop</strong><br>
+	当拖动停止时触发<br>
+	接受两个参数，event和ui<br>
+	代码样例:$( ".selector" ).draggable({ stop: function( event, ui ) {} });
+	</blockquote>
+	<p>今天暂时写到这里，未完待续...</p>
+	<p>本文编写参考于<a href="http://blog.csdn.net/dearkerwin/article/details/8969642" target="_blank">jquery ui（二）draggable,droppable</a></p>
 </article>
