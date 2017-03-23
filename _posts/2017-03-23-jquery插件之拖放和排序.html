@@ -25,8 +25,9 @@ description: 最近一个项目要用到拖拽排序，如果你去网上搜索�
     <p>
         1.首先，我们要先引入相关的js,先引入jquery库，再引入jquery-ui
     </p>
-    {% highlight ruby linenos%}
-    <script src="自己项目插件地址/jquery-1.9.1.js"></script><script src="自己项目插件地址/jquery-ui.js"></script>//插件都集成在jquery-ui.js{% endhighlight %}
+    {% highlight ruby linenos%}<script src="自己项目插件地址/jquery-1.9.1.js"></script>
+    <script src="自己项目插件地址/jquery-ui.js"></script>//插件都集成在jquery-ui.js
+    {% endhighlight %}
     <p>
         2.然后需要在HTML页面上有一个拖拽的目标
     </p>
@@ -34,7 +35,9 @@ description: 最近一个项目要用到拖拽排序，如果你去网上搜索�
     <p>
         3.插件进行初始化使用
     </p>
-    {% highlight ruby linenos %}$("#draggable").draggable({//初始化#draggable，初始化之后就可以被拖动 //这里是配置项设置 }); {% endhighlight %}
+    {% highlight ruby linenos %}$("#draggable").draggable({//初始化#draggable，初始化之后就可以被拖动 
+    //这里是配置项设置 });
+    {% endhighlight %}
     <p>
         4.配置项解释(只是列举常用部分，具体请看文档)
     </p>
