@@ -1,0 +1,77 @@
+---
+layout: post
+title: IEhack
+author: Evan
+date: 2015-08-19 14:57:00
+tags:
+- CSS
+- IE
+categories: CSS
+description: IE的条件注释是一种专有的，非专业的，对常规(X)HTML注释的Miscrosoft扩展。但是在Web页面制作中尽量不要使用CSS Hack来处理兼容问题。除非到了万不得已情况下，才考虑CSS的Hack。
+---
+<article class="infoContent">
+    <h4 class="infoSubTitle">描述</h4>
+    <p>
+        ————处理各浏览器的兼容问题，未到情非得以的情况下才使用HACK
+        <br /> IE的条件注释是一种专有的，非专业的，对常规(X)HTML注释的Miscrosoft扩展。
+        <br /> 在Web页面制作中尽量不要使用CSS Hack来处理兼容问题。因为任何浏览器下出现渲染不一致都极有可能是我们自己的结构或样式不符合W3C的某些要求，或者说违背了浏览器的某些规则而先造成的，所以我们应该尽量通过结构或CSS的修改来达到各浏览器渲染一致效果，除非到了万不得已情况下，才考虑CSS的Hack。
+    </p>
+    <p>
+        优点：1>可以将部分兼容代码让符合条件的浏览器识别
+        <br /> 2>让自己的主要样式表整洁，清爽
+    </p>
+    <h4 class="infoSubTitle">如何创建条件样式</h4>
+    <p>
+        1>支持所有IE浏览器
+    </p>
+    {% highlight ruby linenos%}<!--[if !IE]>
+	<link rel="stylesheet" href="not-ie.css"  type="text/css"/>
+<![endif]-->{% endhighlight %}
+    <p>
+        2>支持除IE外的所有浏览器
+    </p>
+    {% highlight ruby linenos%}<!--[if IE]>
+	<link rel="stylesheet" href="all-ie-only.css"  type="text/css"/>
+<![endif]-->{% endhighlight %}
+    <p>
+        3>仅仅支持IE XX (XX代表10,9,8,7,6)
+    </p>
+    {% highlight ruby linenos%}<!--[if IE XX]>
+	<link rel="stylesheet" type="text/css" href="ieXX.css">
+<![endif]-->{% endhighlight %}
+    <p>
+        4>支持IE10以下版本（IE9以及IE9以下版本）
+    </p>
+    {% highlight ruby linenos%}<!--[if lt IE 10]>
+	<link rel="stylesheet" type="text/css" href="ie9-and-down.css">
+<![endif]-->
+//或者也可以写成下面
+<!--[if lte IE 9]>
+	<link rel="stylesheet" type="text/css" href="ie9-and-down.css">
+<![endif]-->
+
+//lt表示小于版本号，不包括条件版本号本身；而lte是小于或等于版本号，包括了版本号自身{% endhighlight %}
+    <p>
+        5>高于IE9的版本(IE10以及IE10以上版本)
+    </p>
+    {% highlight ruby linenos%}<!--[if gt IE 9]>
+	<link rel="stylesheet" type="text/css" href="ie10-and-up.css">
+<![endif]-->
+//或者也可以写成下面
+<!--[if gte IE 10]>
+	<link rel="stylesheet" type="text/css" href="ie10-and-up.css">
+<![endif]-->
+
+//gt刚好和lt相反，表示的是大于条件版本号，不包括版本号本身；
+//而gte则和lte相反，表示的是大于或等于条件版本号，包括了条件版本自身。{% endhighlight %}
+    <p>
+        最后有一点需要提出的是：“IE的条件注释不单单针对样式，我们也可以针对于javascrit或者其字的注释说明”。
+    </p>
+    {% highlight ruby linenos%}<!--[if IE 6]>
+	<script type="text/javascript" src="js/pngfix.js"></script>
+	<script type="text/javascript" src="js/ie6.js"></script>
+<![endif]-->{% endhighlight %}
+    <blockquote>最后总结一下条件注释主要针对的是IE浏览器，所以我们也把他称作IE条件注释。另外IE条件注释只有IE5以上的版本才开始支持IE条件注释， 所以“只有IE”才能识别，换句话说，只有IE5版本以上才能识别IE条件注释。如此一来，我们管理给IE兼容写的单独样式， 就带来了极大的方便与好处。
+    </blockquote>
+    <p>本文编写参考于<a href="http://www.w3cplus.com/css/create-css-browers-hacks" target="_blank">浏览器兼容之旅的第二站:各浏览器的Hack写法</a></p>
+</article>
