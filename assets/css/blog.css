@@ -1315,7 +1315,7 @@ pre code {
 }
 .highlight .gutter pre {
   text-align: right;
-  padding-right: 1.5em;
+  line-height: 21px;
 }
 .highlight .line {
   height: 20px;
