@@ -1,0 +1,48 @@
+<div class="blogContent clearfix">
+    <div class="blogContentLeft">
+    <section class="blogCategories">
+    {% if site.tags | size != 0 %}
+    {% for item in site.tags  %}
+        <ul class="eui-timeline js-{{ item[0] }} hide">
+            <li class="eui-timeline-item">
+                <div class="eui-timeline-tail"></div>
+                <div class="eui-timeline-head-custom">
+                    <i class="glyphicon glyphicon-time"></i>
+                </div>
+                <div class="eui-timeline-content">{{ item[0] }}</div>
+            </li>
+            {% for p in item[1] | size %}
+                <li class="eui-timeline-item">
+                    <div class="eui-timeline-tail"></div>
+                    <div class="eui-timeline-head"></div>
+                    <div class="eui-timeline-content">
+                        <a href="{{ site.baseurl }}{{ p.url }}#more">
+                            <span class="item-time">{{p.date | date: "%m-%d" }}</span>
+                            <span>{{p.title}}</span>
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    {% endif %}
+    </section>
+    </div>
+    <div class="blogContentRight">
+        {% include _component/categorie.html %}
+        {% include _component/tag.html %}
+    </div>
+</div>
+<div class='backTop'>↑</div>
+{% include _component/footerWithJS.html %}
+<script type="text/javascript">
+    $(function(){
+        var categoryName = window.location.href.split('?')[0].split('/').pop().split('#').pop();
+        $(".blogCategories ul.js-"+categoryName+"").removeClass("hide");
+        $("a.js-tag-link").on("click",function(){
+            var title = $(this).attr("title");
+            $(".blogCategories ul.js-"+title+"").removeClass("hide").siblings('ul').addClass("hide");
+        })
+    })
+</script>
+
