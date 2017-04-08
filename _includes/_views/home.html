@@ -70,18 +70,55 @@
                 {% include _component/archive.html %}
             {% endfor %}
 		</ul>
-		<div class="pagenavi clearfix">
+		<!-- 总页数大于1页的时候启动分页 -->
+        {% if paginator.total_pages > 1 %}
+        <div class="pagenavi clearfix">
+            {% if paginator.previous_page %}
             <!-- 上一页 -->
-            <a class="pull-left mr-5 home" href="/">首页</a>
-            <a class="pull-left mr-5 prev" href="/">上一页</a>
+                <a class="pull-left mr-5 home" href="/">首页</a>
+                <a class="pull-left mr-5 prev" href="{{ paginator.previous_page_path }}">上一页</a>
+            <!-- 上一页 -->
+            {% endif %}
             <!-- 页码 -->
-            <a class="pageNum" href="/">1</a>
-            <span class="pageNum current">2</span>
-            <a class="pageNum" href="/page3">3</a>
-            <span class="pageNum">共4页</span>
+            {% if paginator.page == 1 %}
+                {% for page in (1..paginator.next_page) %}
+                    {% if paginator.page == page %}
+                        <span class="pageNum current">{{ page }}</span>
+                    {% elsif page == 1 %}
+                        <a class="pageNum" href="/">{{ page }}</a>
+                    {% else %}
+                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% elsif paginator.page == paginator.total_pages %}
+                {% for page in (paginator.previous_page..paginator.total_pages) %}
+                    {% if paginator.page == page %}
+                        <span class="pageNum current">{{ page }}</span>
+                    {% elsif page == 1 %}
+                        <a class="pageNum" href="/">{{ page }}</a>
+                    {% else %}
+                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% for page in (paginator.previous_page..paginator.next_page) %}
+                    {% if paginator.page == page %}
+                        <span class="pageNum current">{{ page }}</span>
+                    {% elsif page == 1 %}
+                        <a class="pageNum" href="/">{{ page }}</a>
+                    {% else %}
+                        <a class="pageNum" href="/page{{ page }}">{{ page }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <span class="pageNum">共{{ paginator.total_pages }}页</span>
+            {% if paginator.next_page %}
             <!-- 下一页 -->
-            <a class="pull-right ml-5 last" href="/page4">末页</a>
-            <a class="pull-right ml-5 next" href="/page3">下一页</a>
+                <a class="pull-right ml-5 last" href="/page{{ paginator.total_pages }}">末页</a>
+                <a class="pull-right ml-5 next" href="{{ paginator.next_page_path }}">下一页</a>
+            <!-- 下一页 -->
+            {% endif %}
         </div>
+        {% endif %}
 	</div>
 </div>
