@@ -1586,7 +1586,7 @@ img {
 }
 .main .grid .top-bar .dropbox {
   position: fixed;
-  top: 0;
+  top: -100%;
   background-color: transparent;
   z-index: 99;
   padding: 35px;
@@ -1596,9 +1596,9 @@ img {
   -webkit-transform: translateY(-100%);
   -moz-transform: translateY(-100%);
   transform: translateY(-100%);
-  -webkit-transition: right 0.2s, background-color 0.2s, -webkit-transform 0.2s;
-  -moz-transition: right 0.2s, background-color 0.2s, -moz-transform 0.2s;
-  transition: right 0.2s, background-color 0.2s, transform 0.2s;
+  -webkit-transition: top 0.2s, -webkit-transform 0.2s;
+  -moz-transition: top 0.2s, -moz-transform 0.2s;
+  transition: top 0.2s,transform 0.2s;
 }
 .main .grid .top-bar .dropbox li {
   margin: 5px;
@@ -1610,6 +1610,7 @@ img {
   color: #77c34f;
 }
 .main .grid .top-bar .dropbox.dropbox-visitiy {
+  top: 0;
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   transform: translateY(0);
