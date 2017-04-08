@@ -1,0 +1,32 @@
+<!-- item在home.html做了定义 -->
+<li class="pull-left grid-list-item">
+	<div class="grid-list-item-box">
+		<a href="{{ site.baseurl }}{{ item.url }}" class="h4" title="{{ item.title }}">
+			<strong>{{ item.title }}</strong>
+		</a>
+		<p><small>{{ item.date | date: "%F" }} by {{ site.author.name }}</small></p>
+		<hr />
+		<summary class="h5">{{item.description}}</summary>
+		<div class="h5 clearfix">
+			{% if item.categories %}
+			<div class="pull-left mr-5">
+				<strong>分类:</strong>
+				{% for i in item.categories %}
+				<a href='javascript:;'>{{i}}</a>
+				{% endfor %}
+			</div>
+            {% endif %}
+            {% if item.tags | size !=0 %}
+            <div class="pull-left mr-5">
+				<strong>标签:</strong>
+				{% for i in item.tags %}
+                    <a href='javascript:;'>{{i}}</a>
+                {% endfor %}
+			</div>
+            {% endif %}
+			<div class="pull-right">
+				<a href="{{ site.baseurl }}{{ item.url }}#more"><strong>阅读全文</strong></a>
+			</div>
+		</div>
+	</div>
+</li>
