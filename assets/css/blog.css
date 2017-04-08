@@ -1593,13 +1593,12 @@ img {
   left: 310px;
   right: 10px;
   visibility: hidden;
-  background-color: #007bbe;
   -webkit-transform: translateY(-100%);
   -moz-transform: translateY(-100%);
   transform: translateY(-100%);
-  -webkit-transition: visibility 0.2s, -webkit-transform 0.2s;
-  -moz-transition: visibility 0.2s, -moz-transform 0.2s;
-  transition: visibility 0.2s,transform 0.2s;
+  -webkit-transition: visibility 0.2s, background-color 0.2s, -webkit-transform 0.2s;
+  -moz-transition: visibility 0.2s, background-color 0.2s, -moz-transform 0.2s;
+  transition: visibility 0.2s, background-color 0.2s, transform 0.2s;
 }
 .main .grid .top-bar .dropbox li {
   margin: 5px;
@@ -1612,6 +1611,7 @@ img {
 }
 .main .grid .top-bar .dropbox.dropbox-visitiy {
   visibility: visible;
+  background-color: #007bbe;
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   transform: translateY(0);
