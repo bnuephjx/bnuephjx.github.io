@@ -16,33 +16,27 @@ description: 最近一个项目要用到拖拽排序，如果你去网上搜索�
     Sortable插件请点击跳转到它的官网进行下载
     jquery插件请点击跳转到它的官网进行下载，可以全部下载，也可以根据自己需要进行下载
 </summary>
-<p class="font"><a href="javascript:;">Sortable</a>插件请点击跳转到它的官网进行下载</p>
-<p class="font ptb"><a href="javascript:;">jquery</a>插件请点击跳转到它的官网进行下载，可以全部下载，也可以根据自己需要进行下载</p>
+<p class="font"><a href="http://rubaxa.github.io/Sortable/" target="_blank">Sortable</a>插件请点击跳转到它的官网进行下载</p>
+<p class="font ptb"><a href="http://jqueryui.com/download/" target="_blank">jquery</a>插件请点击跳转到它的官网进行下载，可以全部下载，也可以根据自己需要进行下载</p>
 <hr />
 <h4><strong>draggable:拖拽</strong></h4>
-<p class="font ptb">别的不说，先上它相关的<a href="javascript:;">中文文档</a> </p>
-<p class="font ptb">英文学霸请到它的<a href="javascript:;">官方英文文档</a>查看</p>
+<p class="font ptb">别的不说，先上它相关的<a href="http://www.css88.com/jquery-ui-api/draggable/" target="_blank">中文文档</a></p>
+<p class="font ptb">英文学霸请到它的<a href="http://api.jqueryui.com/draggable/" target="_blank">官方英文文档</a>查看</p>
 <ol>
     <li class="font">
         <h5 class="font-color ptb">首先，我们要先引入相关的js,先引入jquery库，再引入jquery-ui</h5>
-        <pre name="code" class="js:nocontrols">
-            <script src="自己项目插件地址/jquery-1.9.1.js"></script>
-            <script src="自己项目插件地址/jquery-ui.js"></script>//插件都集成在jquery-ui.js
-        </pre>
+        {% highlight ruby linenos%}<script src="自己项目插件地址/jquery-1.9.1.js"></script>
+<script src="自己项目插件地址/jquery-ui.js"></script>//插件都集成在jquery-ui.js{% endhighlight %}
     </li>
     <li class="font">
         <h5 class="font-color ptb">然后需要在HTML页面上有一个拖拽的目标</h5>
-        <pre name="code" class="js:nocontrols">
-            <div id="draggable" class="draggable"></div>
-        </pre>
+        {% highlight ruby linenos %}<div id="draggable" class="draggable"></div>{% endhighlight %}
     </li>
     <li class="font">
         <h5 class="font-color ptb">插件进行初始化使用</h5>
-        <pre name="code" class="js:nocontrols">
-        $("#draggable").draggable({//初始化#draggable，初始化之后就可以被拖动
-           //这里是配置项设置
-        });
-        </pre>
+        {% highlight ruby linenos %}$("#draggable").draggable({//初始化#draggable，初始化之后就可以被拖动
+      //这里是配置项设置
+});{% endhighlight %}
     </li>
     <li class="font">
         <h5 class="font-color ptb">配置项解释(只是列举常用部分，具体请看文档)</h5>
