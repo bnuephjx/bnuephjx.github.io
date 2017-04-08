@@ -34,22 +34,24 @@
 	</ul>
 	{% if page.layout=='post' %}
 		<!-- 当上一篇或者下一篇存在的情况下 -->
-		{% if page.previous and page.next %}
-		<a class="pull-left prev" href="{{page.previous.url}}" title='{{page.previous.title}}'>
-            上一篇
-        </a>
-        <a class="pull-left next" href="{{page.next.url}}" title='{{page.next.title}}'>
-            下一篇
-        </a>
-		{% elsif page.previous %}
-		<a class="pull-left" href="{{page.previous.url}}" title='{{page.previous.title}}'>
-            上一篇
-        </a>
-		{% elsif page.next %}
-		<a class="pull-left" href="{{page.next.url}}" title='{{page.next.title}}'>
-            下一篇
-        </a>
-		{% endif %}
+		<div class="pages clearfix">
+			{% if page.previous and page.next %}
+			<a class="pull-left w-50" href="{{page.previous.url}}" title='{{page.previous.title}}'>
+	            上一篇
+	        </a>
+	        <a class="pull-left w-50" href="{{page.next.url}}" title='{{page.next.title}}'>
+	            下一篇
+	        </a>
+			{% elsif page.previous %}
+			<a class="pull-left w-100" href="{{page.previous.url}}" title='{{page.previous.title}}'>
+	            上一篇
+	        </a>
+			{% elsif page.next %}
+			<a class="pull-left w-100" href="{{page.next.url}}" title='{{page.next.title}}'>
+	            下一篇
+	        </a>
+			{% endif %}
+		</div>
 	{% endif %}
 </div>
 <!--左边▲-->

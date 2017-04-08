@@ -1535,17 +1535,21 @@ img {
   bottom: 0;
   border-top: 1px solid #d9d9bc;
 }
-.sidebar .pages .prev,
-.sidebar .pages .next {
+.sidebar .pages a {
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  width: 50%;
   padding: 10px 0;
   background-color: #017bbe;
 }
-.sidebar .pages .prev {
-  border-right: 1px solid #d9d9bc;
+.sidebar .pages a:nth-child(2n) {
+  border-left: 1px solid #d9d9bc;
+}
+.sidebar .pages a.w-50 {
+  width: 50%;
+}
+.sidebar .pages a.w-100 {
+  width: 100%;
 }
 .main {
   height: 100%;
