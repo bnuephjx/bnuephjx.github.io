@@ -1,39 +1,97 @@
-<div class="blogContent clearfix">
-    <div class="blogContentLeft">
-    <section class="blogCategories">
-    {% if site.categories | size != 0 %}
-    {% for item in site.categories  %}
-        <ul class="eui-timeline js-{{ item[0] }} hide">
-            <li class="eui-timeline-item">
-                <div class="eui-timeline-tail"></div>
-                <div class="eui-timeline-head-custom">
-                    <i class="glyphicon glyphicon-time"></i>
-                </div>
-                <div class="eui-timeline-content">{{ item[0] }}</div>
-            </li>
-            {% for p in item[1] | size %}
+{% include _component/left.html %}
+<div class="main">
+    <div class="grid">
+        <header class="top-bar clearfix">
+            <h5 class="pull-left">最新文章</h5>
+            <div class="pull-right filter">
+                <span>分类:</span>
+                <span class="dropdown js-dropdown">Popular</span>
+            </div>
+            <!--上下一篇▼-->
+            <div class="dropbox">
+                <ul class="clearfix">
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">CSS</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">CSS</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">CSS</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">CSS</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                    <li class="pull-left">
+                        <a href="javascript:;">插件</a>
+                    </li>
+                </ul>
+                <span class="dropbox-close js-dropbox-close"></span>
+            </div>
+        </header>
+        <div class="timelineBox">
+        <!-- 时间轴 -->
+        {% if site.categories | size != 0 %}
+        {% for item in site.categories  %}
+            <ul class="eui-timeline js-{{ item[0] }} hide">
                 <li class="eui-timeline-item">
                     <div class="eui-timeline-tail"></div>
-                    <div class="eui-timeline-head"></div>
-                    <div class="eui-timeline-content">
-                        <a href="{{ site.baseurl }}{{ p.url }}#more">
-                            <span class="item-time">{{p.date | date: "%m-%d" }}</span>
-                            <span>{{p.title}}</span>
-                        </a>
+                    <div class="eui-timeline-head-custom">
+                        <i class="glyphicon glyphicon-time"></i>
                     </div>
+                    <div class="eui-timeline-content">{{ item[0] }}</div>
                 </li>
-            {% endfor %}
-        </ul>
-    {% endfor %}
-    {% endif %}
-    </section>
-    </div>
-    <div class="blogContentRight">
-        {% include _component/categorie.html %}
-        {% include _component/tag.html %}
+                {% for p in item[1] | size %}
+                    <li class="eui-timeline-item">
+                        <div class="eui-timeline-tail"></div>
+                        <div class="eui-timeline-head"></div>
+                        <div class="eui-timeline-content">
+                            <a href="{{ site.baseurl }}{{ p.url }}#more">
+                                <span class="item-time">{{p.date | date: "%m-%d" }}</span>
+                                <span>{{p.title}}</span>
+                            </a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        {% endif %}
+        </div>
     </div>
 </div>
-<div class='backTop'>↑</div>
 {% include _component/footerWithJS.html %}
 <script type="text/javascript">
     $(function(){
