@@ -11,10 +11,13 @@
 			<span class="js-menu-txt cd-nav-trigger-close"></span>
 		</a>
 		<ul class="clearfix">
-			<li class="pull-left text-center"><a href="#0"><span>首页</span></a></li>
-			<li class="pull-left text-left"><a href="#0"><span>归档</span></a></li>
-			<li class="pull-right text-center"><a href="#0"><span>分类</span></a></li>
-			<li class="pull-right text-right"><a href="#0"><span>标签</span></a></li>
+			{% for item in site.menu %}
+				<li class="pull-left text-center">
+					<a href="{{ site.baseurl }}{{ item[1] }}">
+						<span>{{ item[0] }}</span>
+					</a>
+				</li>
+			{% endfor %}
 		</ul>
 		<span class="stretchy-nav-bg"></span>
 	</nav>

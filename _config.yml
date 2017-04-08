@@ -45,7 +45,8 @@ language: zh-CN    ## blog site languages: en, zh-CN, zh-TW
 menu:
   '首页': /
   '归档': /archives
-  '个人信息': /about
+  '标签': /tags
+  '分类': /categories
 ## you can create `tags` and `categories` folders (I had created them already).
 ## And create a `index.md` file in each of them.
 ## set `front-matter`as
