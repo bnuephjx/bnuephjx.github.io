@@ -33,12 +33,24 @@
 		</li>
 	</ul>
 	{% if page.layout=='post' %}
-	<!--上下一篇▼-->
-	<div class="pages clearfix">
-		<a href="javascript:;" class="pull-left prev">上一篇</a>
-		<a href="javascript:;" class="pull-left next">下一篇</a>
-	</div>
-	<!--上下一篇▲-->
+		<!-- 当上一篇或者下一篇存在的情况下 -->
+	    {% if page.previous or page.next %}
+	    	<div class="pages clearfix">
+	            <!-- 上一篇 -->
+	            {% if page.previous %}
+	                <a href="{{page.previous.url}}" title='{{page.previous.title}}'>
+	                    上一篇
+	                </a>
+	            {% endif %}
+
+	            <!-- 下一篇 -->
+	            {% if page.next %}
+	                <a href="{{page.next.url}}" title='{{page.next.title}}'>
+	                    下一篇
+	                </a>
+	            {% endif%}
+	        </div>
+	    {% endif %}
 	{% endif %}
 </div>
 <!--左边▲-->
