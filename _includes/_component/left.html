@@ -38,14 +38,14 @@
 	    	<div class="pages clearfix">
 	            <!-- 上一篇 -->
 	            {% if page.previous %}
-	                <a href="{{page.previous.url}}" title='{{page.previous.title}}'>
+	                <a class="pull-left prev" href="{{page.previous.url}}" title='{{page.previous.title}}'>
 	                    上一篇
 	                </a>
 	            {% endif %}
 
 	            <!-- 下一篇 -->
 	            {% if page.next %}
-	                <a href="{{page.next.url}}" title='{{page.next.title}}'>
+	                <a class="pull-left next" href="{{page.next.url}}" title='{{page.next.title}}'>
 	                    下一篇
 	                </a>
 	            {% endif%}
