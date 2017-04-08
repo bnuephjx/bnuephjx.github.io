@@ -12,11 +12,31 @@
 		</a>
 		<ul class="clearfix">
 			{% for item in site.menu %}
+				{% if forloop.index0 == '0' %}
 				<li class="pull-left text-center">
 					<a href="{{ site.baseurl }}{{ item[1] }}">
 						<span>{{ item[0] }}</span>
 					</a>
 				</li>
+				{% elsif forloop.index0 == '1' %}
+				<li class="pull-left text-left">
+					<a href="{{ site.baseurl }}{{ item[1] }}">
+						<span>{{ item[0] }}</span>
+					</a>
+				</li>
+				{% elsif forloop.index0 == '2' %}
+				<li class="pull-right text-center">
+					<a href="{{ site.baseurl }}{{ item[1] }}">
+						<span>{{ item[0] }}</span>
+					</a>
+				</li>
+				{% elsif forloop.index0 == '3' %}
+				<li class="pull-right text-right">
+					<a href="{{ site.baseurl }}{{ item[1] }}">
+						<span>{{ item[0] }}</span>
+					</a>
+				</li>
+				{% endif %}
 			{% endfor %}
 		</ul>
 		<span class="stretchy-nav-bg"></span>
