@@ -62,12 +62,10 @@
 				<span class="dropbox-close js-dropbox-close"></span>
 			</div>
 		</header>
-		<div class="paginatorPosts hide">{{ paginator.posts }}</div>
 		<ul class="grid-list clearfix">
 			 <!-- 首页文章展示 -->
             {% for post in paginator.posts %}
                 {% assign item = post %}
-                {% assign _arry = [] %}
                 <!-- 调用存档组件 -->
                 {% include _component/archive.html %}
             {% endfor %}
@@ -127,7 +125,7 @@
 {% include _component/footerWithJS.html %}
 <script type="text/javascript">
 	$(function(){
-		var pages = '{{ paginator.total_pages }}';
+		var pages = '{{ paginator.posts }}';
 		console.log(pages)
 	})
 </script>
