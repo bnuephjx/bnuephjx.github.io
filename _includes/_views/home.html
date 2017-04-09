@@ -62,6 +62,7 @@
 				<span class="dropbox-close js-dropbox-close"></span>
 			</div>
 		</header>
+		<div class="paginatorPosts hide">{{ paginator.posts }}</div>
 		<ul class="grid-list clearfix">
 			 <!-- 首页文章展示 -->
             {% for post in paginator.posts %}
@@ -123,3 +124,8 @@
 	</div>
 </div>
 {% include _component/footerWithJS.html %}
+<script type="text/javascript">
+	$(function(){
+		console.log($(".paginatorPosts").text())
+	})
+</script>
