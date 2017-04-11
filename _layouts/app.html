@@ -75,7 +75,6 @@
 		{% assign paginatorPostsArry = [] %}
 		{% assign paginatorPostsItem = {} %}
 		{% for post in paginator.posts %}
-			{% assign paginatorPostsItem.title = post.title %}
             {% assign paginatorPostsArry | push : paginatorPostsItem %}
         {% endfor %}
 		<script type="text/javascript" async defer src="{{ site.assets }}/jvw/js/vendor/require/require.js"></script>
