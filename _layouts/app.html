@@ -72,8 +72,6 @@
 			<div class="js-sidebar-region"></div>
 			<div class="js-right-region"></div>
 		</div>
-		<script type="text/javascript" src="{{ site.assets }}/jvw/js/vendor/jquery/jquery.js" ></script>
-		<script type="text/javascript" src="{{ site.assets }}/jvw/js/vendor/common/nprogress.js"></script>
 		<script type="text/javascript" async defer src="{{ site.assets }}/jvw/js/vendor/require/require.js"></script>
 		<script type="text/javascript" async defer>
 		    window.onload = function () {
@@ -90,12 +88,10 @@
 						"module":"pages/module"
 					}
 		        });
-		        // req(['nprogress'], function(nprogress) {
-		        // 	nprogress.start();
-		        // });
-		        NProgress.start();
+		        req(['nprogress'], function(nprogress) {
+		        	nprogress.start();
+		        });
 				req(['main'], function(app) {});
-				NProgress.done();
 			}
 		</script>
 	</body>
