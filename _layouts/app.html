@@ -1,4 +1,5 @@
 ---
+paginatorPostsArry:[]
 ---
 {% assign lang = site.data.languages[site.language] %}
 <html {% if site.language %} lang="{{ site.language }}" {% endif %}>
@@ -72,7 +73,6 @@
 			<div class="js-sidebar-region"></div>
 			<div class="js-right-region"></div>
 		</div>
-		{% assign paginatorPostsArry = [] %}
 		{% assign paginatorPostsItem = {} %}
 		{% for post in paginator.posts %}
            
@@ -80,7 +80,7 @@
 		<script type="text/javascript" async defer src="{{ site.assets }}/jvw/js/vendor/require/require.js"></script>
 		<script type="text/javascript" async defer>
 		    window.onload = function () {
-		    	var pages = '{{ paginatorPostsArry }}';
+		    	var pages = '{{ page.paginatorPostsArry }}';
 				console.log(pages)
 
 		        var req = require.config({
