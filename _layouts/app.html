@@ -75,7 +75,7 @@
 		<script type="text/javascript" async defer src="{{ site.assets }}/jvw/js/vendor/require/require.js"></script>
 		<script type="text/javascript" async defer>
 		    window.onload = function () {
-		    	var pages = '{{ paginator.posts }}';
+		    	var pages = '{{ page }}';
 		    	console.log(pages)
 		        var req = require.config({
 		        	baseUrl: '{{ site.assets }}/jvw',
