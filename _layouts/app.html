@@ -73,13 +73,7 @@
 			<div class="js-right-region"></div>
 		</div>
 		{% assign paginatorPostsArry = [] %}
-		{% assign paginatorPostsItem = {
-				title:''
-		} %}
-		<!-- {% for post in paginator.posts %}
-			{% paginatorPostsItem.title = post.title %}
-            {% paginatorPostsArry | push:paginatorPostsItem %}
-        {% endfor %} -->
+		{% assign paginatorPostsItem = {title:''} %}
 		<script type="text/javascript" async defer src="{{ site.assets }}/jvw/js/vendor/require/require.js"></script>
 		<script type="text/javascript" async defer>
 		    window.onload = function () {
