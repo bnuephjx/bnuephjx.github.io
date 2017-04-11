@@ -72,13 +72,11 @@
 			<div class="js-sidebar-region"></div>
 			<div class="js-right-region"></div>
 		</div>
-		{% assign paginatorPostsArry = [] %}
-		{% assign paginatorPostsItem = {title:''} %}
 		<script type="text/javascript" async defer src="{{ site.assets }}/jvw/js/vendor/require/require.js"></script>
 		<script type="text/javascript" async defer>
 		    window.onload = function () {
-		    	var pages = '{{ paginatorPostsArry }}';
-				console.log(pages)
+		    	var pages = '{{ paginator.posts | jsonify }}';
+		    	console.log(pages)
 		        var req = require.config({
 		        	baseUrl: '{{ site.assets }}/jvw',
 		            paths: {
