@@ -88,6 +88,9 @@
 						"module":"pages/module"
 					}
 		        });
+		        req(['nprogress'], function(nprogress) {
+		        	nprogress.start();
+		        });
 				req(['main'], function(app) {});
 			}
 		</script>
