@@ -1,0 +1,95 @@
+---
+---
+{% assign lang = site.data.languages[site.language] %}
+<html {% if site.language %} lang="{{ site.language }}" {% endif %}>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<meta name="author" content="{{ site.author.name }}">
+<meta name="keywords" content="bnuephjx，Evan，个人博客">
+<meta name="description" content="bnuephjx，Evan，个人博客">
+<title>个人博客</title>
+<link rel="icon" href="{{ site.assets }}/{{ site.favicon }}">
+<link rel="stylesheet" href="{{ site.assets }}/css/blog.css" type="text/css">
+<link rel="stylesheet" href="{{ site.assets }}/css/highlight.css" type="text/css">
+<script>
+    var require = {
+        config: {
+            text: {
+                useXhr: function (url, protocol, hostname, port) {
+                    return true
+                }
+            }
+        },
+        waitSeconds: 200,
+        paths: {//跟config的配置一样
+            "jquery": "{{ site.assets }}/jvw/js/vendor/jquery/jquery",
+            "nprogress": "{{ site.assets }}/jvw/js/vendor/common/nprogress",
+            "underscore": "{{ site.assets }}/jvw/js/vendor/underscore/underscore",
+            "backbone": "{{ site.assets }}/jvw/js/vendor/backbone/backbone",
+            "backbone.wreqr": "{{ site.assets }}/jvw/js/vendor/backbone/backbone.wreqr",
+            "backboneValidate": "{{ site.assets }}/jvw/js/vendor/backbone/backbone-validation-amd",
+            "backbone.modelbinder":"{{ site.assets }}/jvw/js/vendor/backbone/backbone.modelbinder.min",
+            "marionette":"{{ site.assets }}/jvw/js/vendor/backbone/backbone.marionette",
+            "text": "{{ site.assets }}/jvw/js/vendor/require/plugins/text"
+        },
+        shim: {
+            "jquery": {
+                "exports": "$"
+            },
+            "nprogress":{
+                "deps": ["jquery"]
+            },
+            "backbone": {
+                "deps": ["jquery","underscore" ],
+                "exports": "Backbone"
+            },
+            "backbone.wreqr": {
+                "deps": ["underscore", "backbone"]
+            },
+            "backboneValidate":{
+           	    "deps": ["backbone" ],
+                "exports": "BackboneValidate"
+            },
+            "backbone.modelbinder": {
+                "deps": ["backbone"]
+            },
+            "marionette":{
+            	 "deps": ["backbone" ],
+                 "exports": "Marionette"
+            },
+            "underscore": {
+                "exports": "_"
+            }
+        }
+    };
+</script>
+</head>
+	<body>
+		<div class="container">
+			<div class="js-sidebar-region"></div>
+			<div class="js-right-region"></div>
+		</div>
+		<script type="text/javascript" async defer src="{{ site.assets }}/jvw/js/vendor/require/require.js"></script>
+		<script type="text/javascript" async defer>
+		    window.onload = function () {
+		        var req = require.config({
+		        	baseUrl: '{{ site.assets }}/jvw',
+		            paths: {
+						"main": "pages/home/main",
+						"app":"pages/home/app",
+						"models": "pages/home/models",
+						"templates": "pages/home/templates",
+						"views": "pages/home/views",
+						"controller": "pages/home/controller",
+						"router": "pages/home/router",
+						"module":"pages/module"
+					}
+		        });
+				req(['main'], function(app) {});
+			}
+		</script>
+	</body>
+</html>
