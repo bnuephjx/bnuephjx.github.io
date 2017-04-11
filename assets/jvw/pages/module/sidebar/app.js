@@ -1,7 +1,9 @@
 define(function(require){
 	var Marionette = require("marionette");
 	var tmpl = require("text!./app.html");
-	
+
+	var PagesNavView = require("../pagesnav/app");
+
 	var SideBarView = Marionette.LayoutView.extend({
 		template:_.template(tmpl),
 		className:'sidebar',
@@ -9,9 +11,12 @@ define(function(require){
 			'click .cd-stretchy-nav':'handleNav',
 			'click .js-stretchy-nav-item':'handleRender'
 		},
+		regions:{
+			pagesnavRegion:'.js-pages-region'
+		},
 		initialize:function(options){
 			this.options = options || {};
-			this.listenTo(this.model,"change:detail",this.render);
+			this.listenTo(this.model,"change:detail",this.renderPages);
 		},
 		serializeData:function(){
 			var data = _.extend({},this.model.toJSON());
@@ -30,8 +35,15 @@ define(function(require){
 //			var _type = btn.data("type");
 //			this.model.set("type",_type,{silent:true});
 //			this.model.trigger("change:render",_type);
-//		}
+//		},
+		renderPages:function(){
+			if(this.model.get("type")=="detail"){
+				this.pagesnavRegion.show(new PagesNavView())
+			}else{
+				this.pagesnavRegion.empty();
+			}
+		}
 	});
-	
+
 	return SideBarView;
 })
