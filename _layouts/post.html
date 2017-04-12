@@ -14,6 +14,9 @@
 	<div class="main">
 		<div class="article-info">
 			<div class="article">
+				<h3 class="text-left">{{ page.title }}</h3>
+				<h6 class="text-left"><small>{{ page.date | date: "%F" }} by {{ page.author }}</small></h6>
+				<hr />
 				{{ content }}
 			</div>
 		</div>
