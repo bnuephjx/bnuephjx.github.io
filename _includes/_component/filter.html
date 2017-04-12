@@ -1,20 +1,43 @@
-<div class="pull-right filter">
-	<span>分类:</span>
-	<span class="dropdown js-dropdown">选择</span>
+<div class="tagsFilter pull-right">
+	<div class="filter">
+		<span>标签:</span>
+		<span class="dropdown js-dropdown js-tagsFilter-dropdown">选择</span>
+	</div>
+	{% if site.tags | size != 0 %}
+	<div class="dropbox js-tagsFilter-dropbox">
+		<ul class="clearfix">
+	    	<li class="pull-left">
+				<a href="{{ site.baseurl }}/tags">全部</a>
+			</li>
+		{% for item in site.tags %}
+			<li class="pull-left">
+				<a href="{{ site.baseurl }}/tags#{{ item[0] }}">{{ item[0] }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		<span class="dropbox-close js-dropbox-close"></span>
+	</div>
+	{% endif %}
 </div>
-<!--上下一篇▼-->
-{% if site.categories | size != 0 %}
-<div class="dropbox">
-    <ul class="clearfix">
-    	<li class="pull-left">
-			<a href="{{ site.baseurl }}/categories">全部</a>
-		</li>
-	{% for item in site.categories %}
-		<li class="pull-left">
-			<a href="{{ site.baseurl }}/categories#{{ item[0] }}">{{ item[0] }}</a>
-		</li>
-		{% endfor %}
-	</ul>
-	<span class="dropbox-close js-dropbox-close"></span>
+<div class="categoriesFilter pull-right" style="margin-right: 10px;">
+	<div class="filter">
+		<span>分类:</span>
+		<span class="dropdown js-dropdown js-categoriesFilter-dropdown">选择</span>
+	</div>
+	{% if site.categories | size != 0 %}
+	<div class="dropbox js-categoriesFilter-dropbox">
+	    <ul class="clearfix">
+	    	<li class="pull-left">
+				<a href="{{ site.baseurl }}/categories">全部</a>
+			</li>
+		{% for item in site.categories %}
+			<li class="pull-left">
+				<a href="{{ site.baseurl }}/categories#{{ item[0] }}">{{ item[0] }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		<span class="dropbox-close js-dropbox-close"></span>
+	</div>
+	{% endif %}
 </div>
-{% endif %}
+

@@ -15,10 +15,18 @@
 		$(".js-dropdown").on("click",function(){
 			if($(this).hasClass("dropdown-show")){
 				$(this).removeClass("dropdown-show");
-				$(".dropbox").removeClass("dropbox-visitiy");
+				if($(this).hasClass("js-categoriesFilter-dropdown")){
+					$(".js-categoriesFilter-dropbox").removeClass("dropbox-visitiy");
+				}else if($(this).hasClass("js-tagsFilter-dropdown")){
+					$(".js-tagsFilter-dropbox").removeClass("dropbox-visitiy");
+				}
 			}else{
 				$(this).addClass("dropdown-show");
-				$(".dropbox").addClass("dropbox-visitiy");
+				if($(this).hasClass("js-categoriesFilter-dropdown")){
+					$(".js-categoriesFilter-dropbox").addClass("dropbox-visitiy");
+				}else if($(this).hasClass("js-tagsFilter-dropdown")){
+					$(".js-tagsFilter-dropbox").addClass("dropbox-visitiy");
+				}
 			}
 		})
 		//关闭分类标签等
