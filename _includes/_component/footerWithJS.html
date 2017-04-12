@@ -3,6 +3,13 @@
 <script type="text/javascript">
 	$(function(){
 		// $(".backTop").goTop();
+		//封面
+		$(".js-phone-menu").on("click",function(){
+			$(".sidebar").addClass("sidebar-show");
+		});
+		$(".js-face-close").on("click",function(){
+			$(".sidebar").removeClass("sidebar-show");
+		})
 		//导航
 		$(".cd-stretchy-nav").on("click",function(){
 			if($(this).hasClass("nav-is-visible")){
