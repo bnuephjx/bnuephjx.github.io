@@ -42,19 +42,19 @@ description: Hack是针对不同的浏览器去写不同的CSS样式，从而让
     <li class="font">
         <h5 class="font-color ptb"><strong>完美主义者</strong></h5>
         <p>这种方法是追求完美主义的写法，主要是配合IE条件注释，全部采用选择器Hack的写法。这种写法分两步：</p>
-        <p>1>创建条件样式表，并在HTML中body里添加相应的class类名：</p>
+        <p class="ptb">1>创建条件样式表，并在HTML中body里添加相应的class类名：</p>
         {% highlight ruby linenos%}<!--[if IE6]--><body class="ie6"><![endif]-->
 <!--[if IE7]--><body class="ie7"><![endif]-->
 <!--[if IE8]--><body class="ie8"><![endif]-->
 <!--[if IE9]--><body class="ie9"><![endif]-->
 <!--[if !IE]--><body class="non-ie"><![endif]-->{% endhighlight %}
-        <p>2>接着创建对应的样式</p>
+        <p class="ptb">2>接着创建对应的样式</p>
         {% highlight ruby linenos%}.demo {color: blue;}/*现代浏览器*/
-    .ie6 .demo {color: lime;}/*IE6浏览器*/
-    .ie7 .demo {color: orange;}/*IE7浏览器*/
-    .ie8 .demo{color: green;}/*IE8浏览器*/
-    .ie9 .demo {color: yellow;}/*IE9浏览器*/
-    .non-ie .demo {color: red;}/*除IE外浏览器*/
+.ie6 .demo {color: lime;}/*IE6浏览器*/
+.ie7 .demo {color: orange;}/*IE7浏览器*/
+.ie8 .demo{color: green;}/*IE8浏览器*/
+.ie9 .demo {color: yellow;}/*IE9浏览器*/
+.non-ie .demo {color: red;}/*除IE外浏览器*/
 @media all and (min-width: 0px){
     .demo {color:black;} /* webkit and opera */
 }
