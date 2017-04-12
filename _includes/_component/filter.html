@@ -1,0 +1,20 @@
+<div class="pull-right filter">
+	<span>分类:</span>
+	<span class="dropdown js-dropdown">选择</span>
+</div>
+<!--上下一篇▼-->
+{% if site.categories | size != 0 %}
+<div class="dropbox">
+    <ul class="clearfix">
+    	<li class="pull-left">
+			<a href="{{ site.baseurl }}">全部</a>
+		</li>
+	{% for item in site.categories %}
+		<li class="pull-left">
+			<a href="{{ site.baseurl }}#{{ item[0] }}">{{ item[0] }}</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<span class="dropbox-close js-dropbox-close"></span>
+</div>
+{% endif %}
