@@ -7,11 +7,11 @@
 <div class="dropbox">
     <ul class="clearfix">
     	<li class="pull-left">
-			<a href="{{ site.baseurl }}">全部</a>
+			<a href="{{ site.baseurl }}/categories">全部</a>
 		</li>
 	{% for item in site.categories %}
 		<li class="pull-left">
-			<a href="{{ site.baseurl }}#{{ item[0] }}">{{ item[0] }}</a>
+			<a href="{{ site.baseurl }}/categories#{{ item[0] }}">{{ item[0] }}</a>
 		</li>
 		{% endfor %}
 	</ul>
