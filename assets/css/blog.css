@@ -1826,6 +1826,9 @@ img {
   .main .grid .top-bar .dropbox .dropbox-close {
     top: 8px;
   }
+  .main .article-info .article {
+    padding: 35px 15px 15px 15px;
+  }
   .sidebar {
     width: 100%;
     left: -100%;
