@@ -11,7 +11,7 @@
 			</li>
 		{% for item in site.tags %}
 			<li class="pull-left">
-				<a href="{{ site.baseurl }}/tags#{{ item[0] }}">{{ item[0] }}</a>
+				<a href="{{ site.baseurl }}/tags#{{ item[0] }}&sub={{ forloop.index0 }}">{{ item[0] }}</a>
 			</li>
 			{% endfor %}
 		</ul>
@@ -32,7 +32,7 @@
 			</li>
 		{% for item in site.categories %}
 			<li class="pull-left">
-				<a href="{{ site.baseurl }}/categories#{{ item[0] }}">{{ item[0] }}</a>
+				<a href="{{ site.baseurl }}/categories#{{ item[0] }}&sub={{ forloop.index0 }}">{{ item[0] }}</a>
 			</li>
 			{% endfor %}
 		</ul>
