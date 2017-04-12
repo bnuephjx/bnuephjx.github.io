@@ -1302,6 +1302,24 @@ body .font,
   letter-spacing: 0.25px;
   font-size: 15px;
 }
+html .phone-menu,
+body .phone-menu,
+.container .phone-menu {
+  position: fixed;
+  z-index: 100;
+  width: 25px;
+  height: 25px;
+  top: 14px;
+  left: 10px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #77c34f;
+  margin: -2px 15px 0 0;
+  outline: none;
+  color: #77c34f;
+  background-color: #fff;
+  display: none;
+}
 .pull-left {
   float: left;
 }
@@ -1355,6 +1373,39 @@ img {
 }
 .sidebar a:hover {
   color: #77c34f;
+}
+.sidebar .face-close {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.sidebar .face-close:before,
+.sidebar .face-close:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  top: 7px;
+  left: 0;
+  background-color: #ffffff;
+}
+.sidebar .face-close:before {
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.sidebar .face-close:after {
+  -webkit-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  -o-transform: rotate(-225deg);
+  transform: rotate(-225deg);
 }
 .sidebar .authorImg {
   width: 150px;
@@ -1550,6 +1601,7 @@ img {
 .main {
   position: relative;
   z-index: 50;
+  margin-left: 300px;
 }
 .main .grid {
   position: relative;
@@ -1557,9 +1609,12 @@ img {
 .main .grid .top-bar {
   background: #fff;
   width: 100%;
-  line-height: 1;
+  line-height: 1.4;
   padding: 15px 15px 10px;
   position: relative;
+}
+.main .grid .top-bar .phone-ml {
+  margin-left: 0;
 }
 .main .grid .top-bar .filter {
   font-size: 14px;
@@ -1571,6 +1626,8 @@ img {
   color: #77c34f;
   position: relative;
   font-size: 0.75em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .main .grid .top-bar .filter .dropdown:after {
   content: '';
@@ -1752,99 +1809,36 @@ img {
   font-size: 22px;
   color: #007bbe;
 }
-@media screen and (min-width: 600px) {
-  .main {
-    margin-left: 300px;
+@media screen and (max-width: 600px) {
+  .container .phone-menu {
+    display: block;
   }
-}
-#nprogress {
-    pointer-events: none;
-    -webkit-pointer-events: none;
-    z-index: 9999
-}
-
-#nprogress .bar {
-    background: #1C8;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
+  .main {
+    margin-left: 0;
+  }
+  .main .grid .top-bar .phone-ml {
+    margin-left: 35px;
+  }
+  .main .grid .top-bar .dropbox {
+    z-index: 999;
     left: 0;
+    right: 0;
+    padding: 20px;
+  }
+  .main .grid .top-bar .dropbox .dropbox-close {
+    top: 8px;
+  }
+  .sidebar {
     width: 100%;
-    height: 2px
-}
-
-#nprogress .peg {
+    left: -100%;
+    -webkit-transition: left 0.2s;
+    -moz-transition: left 0.2s;
+    transition: left 0.2s;
+  }
+  .sidebar .face-close {
     display: block;
-    position: absolute;
-    right: 0px;
-    width: 100px;
-    height: 100%;
-    -webkit-box-shadow: 0 0 10px #29d, 0 0 5px #29d;
-    box-shadow: 0 0 10px #29d, 0 0 5px #29d;
-    opacity: 1.0;
-    -webkit-transform: rotate(3deg) translate(0px, -4px);
-    -moz-transform: rotate(3deg) translate(0px, -4px);
-    -ms-transform: rotate(3deg) translate(0px, -4px);
-    transform: rotate(3deg) translate(0px, -4px)
-}
-
-#nprogress .spinner {
-    display: block;
-    position: fixed;
-    z-index: 9999;
-    top: 15px;
-    right: 15px
-}
-
-#nprogress .spinner-icon {
-    width: 14px;
-    height: 14px;
-    border: solid 2px transparent;
-    border-top-color: #1C8;
-    border-left-color: #1C8;
-    border-radius: 10px;
-    -webkit-animation: nprogress-spinner 400ms linear infinite;
-    -moz-animation: nprogress-spinner 400ms linear infinite;
-    animation: nprogress-spinner 400ms linear infinite
-}
-
-@-webkit-keyframes nprogress-spinner {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg)
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg)
-    }
-}
-
-@-moz-keyframes nprogress-spinner {
-    0% {
-        -moz-transform: rotate(0deg);
-        transform: rotate(0deg)
-    }
-    100% {
-        -moz-transform: rotate(360deg);
-        transform: rotate(360deg)
-    }
-}
-
-@keyframes nprogress-spinner {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        transform: rotate(0deg)
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        transform: rotate(360deg)
-    }
+  }
+  .sidebar.sidebar-show {
+    left: 0;
+  }
 }

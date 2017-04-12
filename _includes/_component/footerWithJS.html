@@ -13,6 +13,7 @@
 		})
 		//分类标签等
 		$(".js-dropdown").on("click",function(){
+			$(".js-phone-menu").css('z-index','-1');
 			if($(this).hasClass("dropdown-show")){
 				$(this).removeClass("dropdown-show");
 				if($(this).hasClass("js-categoriesFilter-dropdown")){
@@ -33,6 +34,7 @@
 		$(".js-dropbox-close,.dropbox li").on("click",function(){
 			$(".js-dropdown").removeClass("dropdown-show");
 			$(".dropbox").removeClass("dropbox-visitiy");
+			$(".js-phone-menu").css('z-index','100');
 		});
 	})
 </script>
