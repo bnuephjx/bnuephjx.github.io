@@ -9,20 +9,16 @@ tags:
 categories: CSS
 description: Hack是针对不同的浏览器去写不同的CSS样式，从而让各浏览器能达到一致的渲染效果，那么针对不同的浏览器写不同的CSS CODE的过程，就叫CSS HACK，同时也叫写CSS Hack。然后将Hack放在浏览器特定的CSS文件中，让其符合条件的浏览器解析这些代码，就如前面所说的条件样式，我们将CSS Hack代码放入条件样式文件中，符合条件的浏览器就解析，不符合的将不解析，从面达到您所需要的页面渲染效果。总的一句话来说使用CSS Hack将会使用你的CSS代码部分失去作用，然后借助条件样式，使用其原CSS代码在一些浏览器解析，而CSS Hack代码在符合条件要求的浏览器中替代原CSS那部分代码
 ---
-<article class="infoContent">
-    <h4 class="infoSubTitle">描述</h4>
-    <p>
-       Hack是针对不同的浏览器去写不同的CSS样式，从而让各浏览器能达到一致的渲染效果，那么针对不同的浏览器写不同的CSS CODE的过程，就叫CSS HACK，同时也叫写CSS Hack。然后将Hack放在浏览器特定的CSS文件中，让其符合条件的浏览器解析这些代码，就如前面所说的条件样式，我们将CSS Hack代码放入条件样式文件中，符合条件的浏览器就解析，不符合的将不解析，从面达到您所需要的页面渲染效果。总的一句话来说使用CSS Hack将会使用你的CSS代码部分失去作用，然后借助条件样式，使用其原CSS代码在一些浏览器解析，而CSS Hack代码在符合条件要求的浏览器中替代原CSS那部分代码
-    </p>
-    <h4 class="infoSubTitle">创建方式如下</h4>
-    <p>
-        1> 经济实惠型定法：
-    </p>
-    <p>
-        单独为各种浏览器写Hack的好处是：针对各种浏览顺的Hack写法省力易记。因为其他的浏览器主要是针对现代浏览器，相对来说是比较少的。<br />
-        针对于这种Hack的使用，推荐使用下面的方法：
-    </p>
-    {% highlight ruby linenos%}.demo {
+<summary class="font text-indent">
+    Hack是针对不同的浏览器去写不同的CSS样式，从而让各浏览器能达到一致的渲染效果，那么针对不同的浏览器写不同的CSS CODE的过程，就叫CSS HACK，同时也叫写CSS Hack。然后将Hack放在浏览器特定的CSS文件中，让其符合条件的浏览器解析这些代码，就如前面所说的条件样式，我们将CSS Hack代码放入条件样式文件中，符合条件的浏览器就解析，不符合的将不解析，从面达到您所需要的页面渲染效果。总的一句话来说使用CSS Hack将会使用你的CSS代码部分失去作用，然后借助条件样式，使用其原CSS代码在一些浏览器解析，而CSS Hack代码在符合条件要求的浏览器中替代原CSS那部分代码
+</summary>
+<h4><strong>创建方式如下</strong></h4>
+<ol>
+    <li class="font">
+        <h5 class="font-color ptb"><strong>经济实惠型定法：</strong></h5>
+        <p>单独为各种浏览器写Hack的好处是：针对各种浏览顺的Hack写法省力易记。因为其他的浏览器主要是针对现代浏览器，相对来说是比较少的。</p>
+        <p>针对于这种Hack的使用，推荐使用下面的方法：</p>
+        {% highlight ruby linenos%}.demo {
     color: red;/*所有现代浏览器*/
     color: green\9;/*所有IE浏览器*/
     color: lime\0;/*IE8-9浏览器*/
@@ -42,24 +38,18 @@ description: Hack是针对不同的浏览器去写不同的CSS样式，从而让
 @-moz-document url-prefix(){
     .demo{color:#ccc;}/* all firefox */
 }{% endhighlight %}
-    <p>
-        2> 完美主义者
-    </p>
-    <p>
-        这种方法是追求完美主义的写法，主要是配合IE条件注释，全部采用选择器Hack的写法。这种写法分两步：
-    </p>
-    <p>
-        1、创建条件样式表，并在HTML中body里添加相应的class类名：
-    </p>
-    {% highlight ruby linenos%}<!--[if IE6]--><body class="ie6"><![endif]-->
+    </li>
+    <li class="font">
+        <h5 class="font-color ptb"><strong>完美主义者</strong></h5>
+        <p>这种方法是追求完美主义的写法，主要是配合IE条件注释，全部采用选择器Hack的写法。这种写法分两步：</p>
+        <p>1>创建条件样式表，并在HTML中body里添加相应的class类名：</p>
+        {% highlight ruby linenos%}<!--[if IE6]--><body class="ie6"><![endif]-->
 <!--[if IE7]--><body class="ie7"><![endif]-->
 <!--[if IE8]--><body class="ie8"><![endif]-->
 <!--[if IE9]--><body class="ie9"><![endif]-->
 <!--[if !IE]--><body class="non-ie"><![endif]-->{% endhighlight %}
-    <p>
-        2、接着创建对应的样式
-    </p>
-    {% highlight ruby linenos%}.demo {color: blue;}/*现代浏览器*/
+        <p>2>接着创建对应的样式</p>
+        {% highlight ruby linenos%}.demo {color: blue;}/*现代浏览器*/
     .ie6 .demo {color: lime;}/*IE6浏览器*/
     .ie7 .demo {color: orange;}/*IE7浏览器*/
     .ie8 .demo{color: green;}/*IE8浏览器*/
@@ -77,5 +67,6 @@ description: Hack是针对不同的浏览器去写不同的CSS样式，从而让
 @-moz-document url-prefix(){
     .demo{color:#963;}/* firefox * /
 }{% endhighlight %}
+    </li>
+</ol>
 <p>本文编写参考于<a href="http://www.w3cplus.com/css/create-css-browers-hacks" target="_blank">浏览器兼容之旅的第二站:各浏览器的Hack写法</a></p>
-</article>
