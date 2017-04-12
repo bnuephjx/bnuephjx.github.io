@@ -38,12 +38,11 @@
 {% include _component/footerWithJS.html %}
 <script type="text/javascript">
     $(function(){
-        var categoryName = window.location.href.split('?')[0].split('/').pop().split('#').pop();
-        $(".blogCategories ul.js-"+categoryName+"").removeClass("hide");
-        $("a.js-category-link").on("click",function(){
-            var title = $(this).attr("title");
-            $(".blogCategories ul.js-"+title+"").removeClass("hide").siblings('ul').addClass("hide");
-        })
+        var filterName = window.location.href.split('?')[0].split('/').pop().split('#').pop();
+        if(filterName){
+            var _index = filterName.split('&')[1].split('=').pop();
+            $(".eui-timeline").eq(_index).siblings(".eui-timeline").addClass("hide");
+        }
     })
 </script>
 

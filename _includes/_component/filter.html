@@ -1,7 +1,11 @@
 <div class="tagsFilter pull-right">
 	<div class="filter">
 		<span>标签:</span>
+		{% if page.type=='tags' %}
+		<span class="dropdown js-dropdown js-tagsFilter-dropdown">筛选</span>
+		{% else %}
 		<span class="dropdown js-dropdown js-tagsFilter-dropdown">选择</span>
+		{% endif %}
 	</div>
 	{% if site.tags | size != 0 %}
 	<div class="dropbox js-tagsFilter-dropbox">
@@ -22,7 +26,11 @@
 <div class="categoriesFilter pull-right" style="margin-right: 10px;">
 	<div class="filter">
 		<span>分类:</span>
+		{% if page.type=='categories' %}
+		<span class="dropdown js-dropdown js-categoriesFilter-dropdown">筛选</span>
+		{% else %}
 		<span class="dropdown js-dropdown js-categoriesFilter-dropdown">选择</span>
+		{% endif %}
 	</div>
 	{% if site.categories | size != 0 %}
 	<div class="dropbox js-categoriesFilter-dropbox">
