@@ -1336,6 +1336,7 @@ hr {
 }
 summary {
   margin-bottom: 10px;
+  text-align: justify;
 }
 a:link,
 a:visited,
