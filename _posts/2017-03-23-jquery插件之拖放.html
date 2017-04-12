@@ -1,6 +1,6 @@
 ---
 layout: post
-title: jquery插件之拖放，排序
+title: jquery插件之拖放
 author: Evan
 date: 2017-03-23 21:45:08
 tags:
@@ -8,7 +8,7 @@ tags:
 categories: 插件
 description: 最近一个项目要用到拖拽排序，如果你去网上搜索的话，应该会搜到Sortable.js，这个是脱离jquery使用，比较轻量，而项目里面已经集合了jquery，所以这次依旧使用jquery的插件draggable，droppable， sortable。
 ---
-<h3 class="text-left">jquery插件之拖放，排序</h3>
+<h3 class="text-left">jquery插件之拖放</h3>
 <h6 class="text-left"><small>2017-03-17 by Evan</small></h6>
 <hr />
 <summary class="font text-indent">
@@ -70,6 +70,61 @@ description: 最近一个项目要用到拖拽排序，如果你去网上搜索�
         当是函数的时候就需要注意了，必须返回一个DOM元素<br>
         代码样例:$( "#draggable" ).draggable({ helper:'clone'});<br>
                $( "#draggable" ).draggable({ helper:function(event){ return $(".dom")}});
+        </blockquote>
+    </li>
+</ol>
+<h4><strong>droppable:放</strong></h4>
+<p class="font ptb">照例<a href="http://www.css88.com/jquery-ui-api/droppable/">中文文档</a> </p>
+<p class="font ptb">照例<a href="http://jqueryui.com/droppable/">官方英文文档</a></p>
+<ol>
+    <li class="font">
+        <h5 class="font-color ptb">在HTML页面上有一个放置的区域</h5>
+        {% highlight ruby linenos %}<div id="droppable" class="droppable"></div>{% endhighlight %}
+    </li>
+    <li class="font">
+        <h5 class="font-color ptb">插件进行初始化使用</h5>
+        {% highlight ruby linenos %}$("#droppable").droppable({//初始化#droppable，初始化之后就可以放置
+    //这里是配置项设置
+});{% endhighlight %}
+    </li>
+    <li class="font">
+        <h5 class="font-color ptb">事件类型</h5>
+        {% highlight ruby linenos %}$('#droppable').droppable({  
+       //在允许的draggable对象开始拖动时触发.
+       activate: function(event, ui) { ... },
+       //在允许的draggable对象停止拖动时触发.
+       deactivate: function(event, ui) { ... },
+       //在允许的draggable对象”经过”这个droppable对象时触发
+       over: function(event, ui) { ... },
+       //在允许的draggable对象离开 这个droppable对象时触发
+       out: function(event, ui) { ... },
+       //在允许的draggable对象填充进这个droppable对象时触发.
+       drop: function(event, ui) { ... }  
+});{% endhighlight %}
+    </li>
+    <li class="font">
+        <h5 class="font-color ptb">配置项解释(只是列举常用部分，具体请看文档)</h5>
+        <blockquote>(1)<strong>accept</strong><br>
+        控制可拖动的元素被拖放接受。<br>
+        如是是一个函数，函数将被调用页面上的每一个可拖动的（传递给函数的第一个参数）。该函数必须返回true，如果可拖动应该接受。<br>
+        代码样例:$("#droppable").droppable({ accept: ".special" });
+        </blockquote>
+        <blockquote>(2)<strong>activeClass</strong><br>
+        如果指定了该参数,在被允许的draggable对象填充时,droppable会被添加上指定的样式。<br>
+        代码样例:$('#droppable').droppable({ activeClass: "ui-state-highlight" });
+        </blockquote>
+        <blockquote>(3)<strong>addClasses</strong><br>
+        如果设置为false, 可以防止ui-droppable类在进行时添加. 这可能会使在初始化数百个元素执行.droppable()时使性能得到理想的优化.<br>
+        具体指约束拖动过程中的取向.<br>
+        代码样例:$('#droppable').droppable({ addClasses: false });
+        </blockquote>
+        <blockquote>(4)<strong>disabled</strong><br>
+        如果设置为 true将禁止拖放<br>
+        代码样例:$( "#droppable" ).droppable({ disabled: true });
+        </blockquote>
+        <blockquote>(5)<strong>hoverClass</strong><br>
+        如果设置了该参数,将在一个被允许的拖动元素悬停在放置（droppable）对象上时，向放置（droppable）对象添加一个指定的样式.<br>
+        代码样例:$( "#droppable" ).droppable({ hoverClass: "drop-hover" });
         </blockquote>
     </li>
 </ol>
