@@ -9,7 +9,7 @@
         <!-- 时间轴 -->
         {% if site.categories | size != 0 %}
         {% for item in site.categories  %}
-            <ul class="eui-timeline">
+            <ul class="eui-timeline" data-key="{{ item[0] }}">
                 <li class="eui-timeline-item">
                     <div class="eui-timeline-tail"></div>
                     <div class="eui-timeline-head-custom">
@@ -40,8 +40,11 @@
     $(function(){
         var filterName = window.location.href.split('?')[0].split('/').pop().split('#').pop();
         if(filterName){
-            var _index = filterName.split('&')[1].split('=').pop();
-            $(".eui-timeline").eq(_index).siblings(".eui-timeline").addClass("hide");
+            $(".eui-timeline").each(function(index,item){
+                if($(item).data('key')==filterName){
+                    $(".eui-timeline").eq(index).siblings(".eui-timeline").addClass("hide");
+                }
+            })
         }
     })
 </script>
